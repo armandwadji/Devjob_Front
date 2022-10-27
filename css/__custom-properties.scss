@@ -1,0 +1,45 @@
+// ******** COLORS ********
+:root {
+  // PRIMARY
+  --violet: #5964e0;
+  --light-violet: #939bf4;
+  --very-dark-blue: #19202d;
+  --midnight: #121721;
+
+  // SECONDARY
+
+  --white: #ffffff;
+  --light-gray: #f2f2f2;
+  --gray: #9daec2;
+  --dark-gray: #6e8098;
+}
+
+$violet: var(--violet);
+$light-violet: var(--light-violet);
+$very-dark-blue: var(--very-dark-blue);
+$midnight: var(--midnight);
+$white: var(--white);
+$light-gray: var(--light-gray);
+$gray: var(--gray);
+$dark-gray: var(--dark-gray);
+
+// ******** COLORS CONTEXT ********
+$background: var(--light-gray);
+$text: var(--dark-gray);
+$titles: var(--very-dark-blue);
+
+//******** Variables globals ********
+$text-line-height: calc(26 / 16);
+
+//******** INTERLIGNE ********
+/* Interligne de 34px pour une police de 28px */
+$h1-line-height: calc(34 / 28);
+$h2-line-height: calc(29 / 24);
+$h3-line-height: calc(24 / 20);
+$h4-line-height: calc(18 / 14);
+
+//******** GLOBAL  ********
+// *:focus {
+//   outline: 0.2rem solid $violet;
+//   outline-offset: 1rem;
+// }
