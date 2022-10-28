@@ -325,7 +325,16 @@ a {
   color: var(--white);
 }
 .header .nav__toggle-theme {
-  background-color: green;
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+}
+.header .nav__toggle-theme > :last-child {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 .header .nav__filters {
   position: absolute;
