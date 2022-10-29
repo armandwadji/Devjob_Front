@@ -631,6 +631,10 @@ input[type=search]:focus {
   -moz-appearance: none;
   appearance: none;
 }
+.form-modal .fulltime__container--checkbox:hover::before {
+  background-color: var(--violet);
+  opacity: 0.25;
+}
 .form-modal .fulltime__container--checkbox:before {
   content: "";
   display: block;

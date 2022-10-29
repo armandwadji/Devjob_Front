@@ -262,6 +262,11 @@
           margin-inline-start: 0;
           margin-inline-end: 1.6rem;
 
+          &:hover::before {
+            background-color: $violet;
+            opacity: 0.25;
+          }
+
           // Apparance checkbox
           -webkit-appearance: none;
           -moz-appearance: none;
