@@ -340,110 +340,106 @@
   }
 
   &-modal {
-    position: absolute;
-    background-color: $white;
-    border-radius: 1rem;
-    top: calc(100% + 5rem);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    z-index: 100;
-
-    .location {
-      border-bottom: 1px solid $dark-gray;
-      padding-inline-start: 2.4rem;
-      margin-block-start: 2.4rem;
-      padding-block-end: 2.4rem;
+    @include smallmobile {
+      position: absolute;
+      background-color: $white;
+      border-radius: 1rem;
+      top: calc(100% + 5rem);
+      width: 100%;
       display: flex;
+      flex-direction: column;
+      z-index: 100;
 
-      &-icon {
-        fill: $violet;
-        margin-inline-end: 1.6rem;
-      }
-
-      &-input {
-        border: none;
-        background: transparent;
-      }
-    }
-
-    .fulltime {
-      padding-block: 2.4rem;
-      padding-inline: 2.4rem;
-
-      &__container {
+      .location {
+        border-bottom: 1px solid $dark-gray;
+        padding-inline-start: 2.4rem;
+        margin-block-start: 2.4rem;
         padding-block-end: 2.4rem;
         display: flex;
-        align-items: center;
 
-        &--checkbox {
-          position: relative;
-          height: 2.4rem;
-          width: 2.4rem;
-          cursor: pointer;
+        &-icon {
+          fill: $violet;
           margin-inline-end: 1.6rem;
-
-          &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 2.4rem;
-            height: 2.4rem;
-            top: 0;
-            left: 0;
-            background-color: #979797;
-          }
-
-          &:checked:before {
-            content: "";
-            display: block;
-            position: absolute;
-            background-color: $violet;
-          }
-
-          &:checked:after {
-            content: "";
-            display: block;
-            width: 5px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-            position: absolute;
-            top: 50%;
-            left: 35%;
-            transform: rotate(45deg) translate(-50%, -50%) scale(1.5);
-          }
         }
 
-        &--label {
-          text-transform: capitalize;
-          font-weight: 700;
-          color: $very-dark-blue;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-
-          @include desktop {
-            &::after {
-              content: " only";
-            }
-          }
+        &-input {
+          border: none;
+          background: transparent;
         }
       }
 
-      &-btn {
-        display: inherit;
-        border: none;
-        text-transform: capitalize;
-        background-color: $violet;
-        color: $white;
-        padding-block: 1.6rem;
-        width: 100%;
-        border-radius: 0.5rem;
-        margin-inline: auto;
+      .fulltime {
+        padding-block: 2.4rem;
+        padding-inline: 2.4rem;
+
+        &__container {
+          padding-block-end: 2.4rem;
+          display: flex;
+          align-items: center;
+
+          &--checkbox {
+            position: relative;
+            height: 2.4rem;
+            width: 2.4rem;
+            cursor: pointer;
+            margin-inline-end: 1.6rem;
+
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 2.4rem;
+              height: 2.4rem;
+              top: 0;
+              left: 0;
+              background-color: #979797;
+            }
+
+            &:checked:before {
+              content: "";
+              display: block;
+              position: absolute;
+              background-color: $violet;
+            }
+
+            &:checked:after {
+              content: "";
+              display: block;
+              width: 5px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 50%;
+              left: 35%;
+              transform: rotate(45deg) translate(-50%, -50%) scale(1.5);
+            }
+          }
+
+          &--label {
+            text-transform: capitalize;
+            font-weight: 700;
+            color: $very-dark-blue;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        &-btn {
+          display: inherit;
+          border: none;
+          text-transform: capitalize;
+          background-color: $violet;
+          color: $white;
+          padding-block: 1.6rem;
+          width: 100%;
+          border-radius: 0.5rem;
+          margin-inline: auto;
+        }
       }
     }
   }
