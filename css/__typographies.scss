@@ -77,7 +77,7 @@ input[type="search"] {
     transition: 0.2s ease-in-out;
 
     @include xtrasmallmobile {
-      padding-inline-start: 2.4rem;
+      padding-inline-start: 1rem;
     }
 
     @include tablette {

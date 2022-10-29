@@ -140,22 +140,11 @@
     grid-template-columns: 1fr 2fr;
   }
 
-  &-filter {
+  // FILTER TITLE
+  &-title {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-    // SVG
-    svg {
-      height: 2rem;
-      width: 2rem;
-      fill: $violet;
-
-      @include tablette {
-        height: 2.4rem;
-        width: 2.4rem;
-      }
-    }
 
     @include tablette {
       justify-content: initial;
@@ -177,50 +166,52 @@
         display: flex;
       }
     }
+  }
 
-    // FILTER TITLE
-    &.title {
-      .icons {
-        order: 1;
-        display: flex;
-        align-items: center;
+  &-icons {
+    order: 1;
+    display: flex;
+    align-items: center;
 
-        @include tablette {
-          order: 0;
-        }
+    @include tablette {
+      order: 0;
+    }
 
-        &__filter {
-          fill: $dark-gray;
-          margin-inline-end: 1rem;
+    &__filter {
+      height: 2rem;
+      width: 2rem;
+      fill: $dark-gray;
+      margin-inline-end: 2.4rem;
 
-          @include tablette {
-            display: none;
-          }
-        }
-        &__search {
-          display: flex;
-          background-color: $violet;
-          padding: 1.4rem;
-          border-radius: 0.5rem;
+      @include tablette {
+        display: none;
+      }
+    }
 
-          svg {
-            fill: $white;
-          }
+    &__search {
+      display: flex;
+      background-color: $violet;
+      border-radius: 0.5rem;
 
-          @include tablette {
-            order: 0;
-            background-color: transparent;
-            padding: 0;
+      svg {
+        margin: 1.4rem;
+        fill: $white;
+      }
 
-            svg {
-              fill: $violet;
-            }
-          }
+      @include tablette {
+        order: 0;
+        background-color: transparent;
+        padding: 0;
+
+        svg {
+          margin: 0;
+          fill: $violet;
         }
       }
     }
   }
 
+  // MODAL
   &-modal {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

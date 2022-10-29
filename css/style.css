@@ -323,14 +323,14 @@ input[type=search]::placeholder {
 }
 @media screen and (max-width: 320px) {
   input[type=search]::-moz-placeholder {
-    padding-inline-start: 2.4rem;
+    padding-inline-start: 1rem;
   }
   input[type=search]:-ms-input-placeholder {
-    padding-inline-start: 2.4rem;
+    padding-inline-start: 1rem;
   }
   input[type=search]::placeholder {
-    -webkit-padding-start: 2.4rem;
-            padding-inline-start: 2.4rem;
+    -webkit-padding-start: 1rem;
+            padding-inline-start: 1rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -506,80 +506,72 @@ input[type=search]:focus {
     grid-template-columns: 1fr 2fr;
   }
 }
-.form-filter {
+.form-title {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.form-filter svg {
-  height: 2rem;
-  width: 2rem;
-  fill: var(--violet);
-}
 @media screen and (min-width: 768px) {
-  .form-filter svg {
-    height: 2.4rem;
-    width: 2.4rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .form-filter {
+  .form-title {
     justify-content: initial;
   }
-  .form-filter > :is(:nth-child(1), :nth-child(2), input[type=checkox]) {
+  .form-title > :is(:nth-child(1), :nth-child(2), input[type=checkox]) {
     -webkit-margin-end: 1.6rem;
             margin-inline-end: 1.6rem;
   }
-  .form-filter:not(:last-child) {
+  .form-title:not(:last-child) {
     -webkit-padding-start: clamp(2.4rem, 1.829rem + 0.952vw, 3.2rem);
             padding-inline-start: clamp(2.4rem, 1.829rem + 0.952vw, 3.2rem);
     border-right: 0.1rem solid var(--dark-gray);
   }
 }
-.form-filter:nth-child(2) {
+.form-title:nth-child(2) {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .form-filter:nth-child(2) {
+  .form-title:nth-child(2) {
     display: flex;
   }
 }
-.form-filter.title .icons {
+.form-icons {
   order: 1;
   display: flex;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
-  .form-filter.title .icons {
+  .form-icons {
     order: 0;
   }
 }
-.form-filter.title .icons__filter {
+.form-icons__filter {
+  height: 2rem;
+  width: 2rem;
   fill: var(--dark-gray);
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
+  -webkit-margin-end: 2.4rem;
+          margin-inline-end: 2.4rem;
 }
 @media screen and (min-width: 768px) {
-  .form-filter.title .icons__filter {
+  .form-icons__filter {
     display: none;
   }
 }
-.form-filter.title .icons__search {
+.form-icons__search {
   display: flex;
   background-color: var(--violet);
-  padding: 1.4rem;
   border-radius: 0.5rem;
 }
-.form-filter.title .icons__search svg {
+.form-icons__search svg {
+  margin: 1.4rem;
   fill: var(--white);
 }
 @media screen and (min-width: 768px) {
-  .form-filter.title .icons__search {
+  .form-icons__search {
     order: 0;
     background-color: transparent;
     padding: 0;
   }
-  .form-filter.title .icons__search svg {
+  .form-icons__search svg {
+    margin: 0;
     fill: var(--violet);
   }
 }
