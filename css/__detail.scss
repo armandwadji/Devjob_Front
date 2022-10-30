@@ -1,0 +1,90 @@
+.form {
+  &.detail {
+    max-width: 73rem;
+    margin-inline: auto;
+    height: auto;
+    top: calc(100% - 1.5rem);
+
+    @include tablette {
+      top: calc(100% - 4rem);
+    }
+  }
+}
+
+.company {
+  background-color: $white;
+  display: grid;
+  place-items: center;
+  padding-block: 3.2rem;
+
+  @include tablette {
+    padding-block: 0;
+    place-items: initial;
+    grid-template-columns: 14rem auto;
+  }
+
+  &-logo {
+    position: absolute;
+    bottom: calc(100% - 5rem / 2);
+    right: calc(50% - 5rem / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e99210;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1.5rem;
+
+    @include tablette {
+      position: initial;
+      height: 14rem;
+      width: 14rem;
+      border-radius: 0;
+
+      img {
+        transform: scale(2.1);
+      }
+    }
+  }
+
+  &-infos {
+    padding-block-start: 1.7rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablette {
+      padding-block-start: 0;
+      padding-inline: 4rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-site {
+    padding-block-end: 2.4rem;
+    text-align: center;
+
+    @include tablette {
+      padding-block-end: 0;
+      text-align: start;
+    }
+
+    &__title {
+      text-transform: capitalize;
+      padding-block-end: 0.8rem;
+
+      @include tablette {
+      }
+    }
+  }
+
+  &-btn {
+    background-color: $violetOpacity;
+    color: $violet;
+    padding: 1.6rem 2rem;
+    border-radius: 0.5rem;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}

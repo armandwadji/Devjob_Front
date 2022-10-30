@@ -2,6 +2,7 @@
 :root {
   // PRIMARY
   --violet: #5964e0;
+  --violetOpacity: rgba(89, 100, 224, 0.1);
   --light-violet: #939bf4;
   --very-dark-blue: #19202d;
   --midnight: #121721;
@@ -22,6 +23,7 @@ $white: var(--white);
 $light-gray: var(--light-gray);
 $gray: var(--gray);
 $dark-gray: var(--dark-gray);
+$violetOpacity: var(--violetOpacity);
 
 // ******** COLORS CONTEXT ********
 $background: var(--light-gray);

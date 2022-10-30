@@ -215,6 +215,7 @@ address {
 }
 :root {
   --violet: #5964e0;
+  --violetOpacity: rgba(89, 100, 224, 0.1);
   --light-violet: #939bf4;
   --very-dark-blue: #19202d;
   --midnight: #121721;
@@ -349,9 +350,9 @@ input[type=search]:focus {
 }
 
 .container {
-  max-width: 111rem;
   margin-inline: auto;
   padding-inline: 2.4rem;
+  max-width: 111rem;
 }
 @media screen and (min-width: 768px) {
   .container {
@@ -767,7 +768,6 @@ input[type=search]:focus {
   width: 5rem;
   border-radius: 1.5rem;
   display: flex;
-  align-items: center;
 }
 .main .card__img {
   transform: scale(0.8);
@@ -816,4 +816,94 @@ input[type=search]:focus {
 }
 .footer .load-more:hover {
   background-color: var(--light-violet);
+}
+
+.form.detail {
+  max-width: 73rem;
+  margin-inline: auto;
+  height: auto;
+  top: calc(100% - 1.5rem);
+}
+@media screen and (min-width: 768px) {
+  .form.detail {
+    top: calc(100% - 4rem);
+  }
+}
+
+.company {
+  background-color: var(--white);
+  display: grid;
+  place-items: center;
+  padding-block: 3.2rem;
+}
+@media screen and (min-width: 768px) {
+  .company {
+    padding-block: 0;
+    place-items: initial;
+    grid-template-columns: 14rem auto;
+  }
+}
+.company-logo {
+  position: absolute;
+  bottom: calc(100% - 2.5rem);
+  right: calc(50% - 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e99210;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .company-logo {
+    position: initial;
+    height: 14rem;
+    width: 14rem;
+    border-radius: 0;
+  }
+  .company-logo img {
+    transform: scale(2.1);
+  }
+}
+.company-infos {
+  -webkit-padding-before: 1.7rem;
+          padding-block-start: 1.7rem;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .company-infos {
+    -webkit-padding-before: 0;
+            padding-block-start: 0;
+    padding-inline: 4rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.company-site {
+  -webkit-padding-after: 2.4rem;
+          padding-block-end: 2.4rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .company-site {
+    -webkit-padding-after: 0;
+            padding-block-end: 0;
+    text-align: start;
+  }
+}
+.company-site__title {
+  text-transform: capitalize;
+  -webkit-padding-after: 0.8rem;
+          padding-block-end: 0.8rem;
+}
+.company-btn {
+  background-color: var(--violetOpacity);
+  color: var(--violet);
+  padding: 1.6rem 2rem;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
