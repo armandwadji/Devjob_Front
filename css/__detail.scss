@@ -1,12 +1,32 @@
-.form {
-  &.detail {
-    max-width: 73rem;
-    margin-inline: auto;
-    height: auto;
-    top: calc(100% - 1.5rem);
+.header-detail {
+  margin-block-end: 22rem;
 
-    @include tablette {
-      top: calc(100% - 4rem);
+  @include tablette {
+    margin-block-end: 13.2rem;
+  }
+
+  a {
+    transition: 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.detail {
+  max-width: 73rem;
+  margin-inline: auto;
+  height: auto;
+  top: calc(100% - 1.5rem);
+
+  @include tablette {
+    top: calc(100% - 4rem);
+  }
+
+  button {
+    transition: 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.8;
     }
   }
 }
@@ -40,6 +60,7 @@
       height: 14rem;
       width: 14rem;
       border-radius: 0;
+      border-bottom-left-radius: 0.6rem;
 
       img {
         transform: scale(2.1);
@@ -86,5 +107,183 @@
     border-radius: 0.5rem;
     text-transform: capitalize;
     font-weight: 700;
+  }
+}
+
+.detailContainer {
+  background-color: $white;
+  position: initial;
+  transform: translate(0);
+  border-radius: 0;
+  margin-inline: auto;
+  border-radius: 0.6rem;
+  width: 100%;
+  padding: 4rem 2.4rem;
+
+  @include tablette {
+    padding: 4.8rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+.mainHeader {
+  // background-color: red;
+  display: grid;
+  row-gap: 5rem;
+  margin-block-end: 3.2rem;
+
+  @include tablette {
+    grid-template-columns: 2.25fr 0.75fr;
+    row-gap: 0;
+    margin-block-end: 4rem;
+    align-items: center;
+  }
+
+  &-postAt {
+    padding-block-end: 0.8rem;
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+
+  &-position {
+    padding-block-end: 0.8rem;
+    text-transform: capitalize;
+
+    @include tablette {
+      font-size: 2.8rem;
+    }
+  }
+
+  &-location {
+    text-transform: capitalize;
+    color: $violet;
+  }
+
+  &-btn {
+    border: none;
+    background-color: $violet;
+    color: $white;
+    padding-block: 1.6rem;
+    border-radius: 0.5rem;
+    text-transform: capitalize;
+  }
+}
+
+.description {
+  margin-block-end: 6.6rem;
+
+  @include tablette {
+    margin-block-end: 4rem;
+  }
+}
+
+.requirements {
+  margin-block-end: 4rem;
+
+  @include desktop {
+    margin-block-end: 4.8rem;
+  }
+
+  &-title {
+    margin-block-end: 2.8rem;
+  }
+
+  &-txt {
+    margin-block-end: 3.2rem;
+
+    @include tablette {
+      margin-block-end: 2.4rem;
+    }
+  }
+
+  &-list {
+    // UL LIST
+    li {
+      margin-block-end: 0.8rem;
+      display: grid;
+      grid-template-columns: 0.1fr 0.9fr;
+
+      @include tablette {
+        grid-template-columns: 0.05fr 0.95fr;
+      }
+
+      :nth-child(1) {
+        height: 0.4rem;
+        width: 0.4rem;
+        border-radius: 100%;
+        background-color: $violet;
+        color: $violet;
+        margin-block-start: 1rem;
+      }
+    }
+
+    // OL LIST
+    &.numberList {
+      li {
+        :nth-child(1) {
+          height: 0;
+          width: 0;
+          margin-block-start: 0rem;
+        }
+      }
+    }
+  }
+}
+
+.main-detail {
+  margin-block-end: 6.4rem;
+
+  @include tablette {
+    margin-block-end: 5.3rem;
+  }
+
+  @include desktop {
+    margin-block-end: 8rem;
+  }
+}
+
+.footer {
+  &-detail {
+    background-color: $white;
+
+    .detailContainer {
+      border-radius: 0;
+      padding: 0;
+      background-color: transparent;
+
+      @include tablette {
+        align-items: center;
+        grid-template-columns: 2.25fr 0.75fr;
+        padding-block: 2.3rem;
+      }
+    }
+  }
+
+  &-infos {
+    display: none;
+
+    @include tablette {
+      display: block;
+    }
+  }
+
+  &-title {
+    padding-block-end: 1.2rem;
+  }
+
+  &-btn {
+    border: none;
+    background: $violet;
+    border-radius: 0.5rem;
+    padding-block: 1.6rem;
+    margin: 2.5rem;
+    color: $white;
+    text-transform: capitalize;
+
+    @include tablette {
+      margin: 0;
+    }
   }
 }
