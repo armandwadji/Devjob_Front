@@ -101,7 +101,7 @@
       }
     }
 
-    // classe Importante pour le toggle du dark mode
+    // classe Importante pour le toggle du dark mode: a rajouter sur la classe nav-darkMode
     &.dark > span {
       background-color: $very-dark-blue;
 
@@ -179,9 +179,8 @@
     }
 
     &__filter {
-      height: 2rem;
-      width: 2rem;
-      fill: $dark-gray;
+      border: none;
+      background-color: transparent;
       margin-inline-end: 2.4rem;
 
       @include tablette {
@@ -192,10 +191,11 @@
     &__search {
       display: flex;
       background-color: $violet;
+      border: none;
       border-radius: 0.5rem;
+      padding: 1.4rem;
 
       svg {
-        margin: 1.4rem;
         fill: $white;
       }
 
@@ -346,7 +346,7 @@
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 2fr;
       z-index: 100;
-      visibility: hidden; /*"IMPORTANT pour MODAL"*/
+      // visibility: hidden; /*"IMPORTANT pour MODAL"*/
 
       .location {
         border-bottom: 1px solid $dark-gray;

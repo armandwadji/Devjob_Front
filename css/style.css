@@ -292,7 +292,7 @@ input[type=search]:hover::placeholder {
   opacity: 1;
 }
 @media screen and (max-width: 320px) {
-  input[type=search] {
+  input[type=search]:not([class=location-input]) {
     width: 50%;
   }
 }
@@ -547,9 +547,8 @@ input[type=search]:focus {
   }
 }
 .form-icons__filter {
-  height: 2rem;
-  width: 2rem;
-  fill: var(--dark-gray);
+  border: none;
+  background-color: transparent;
   -webkit-margin-end: 2.4rem;
           margin-inline-end: 2.4rem;
 }
@@ -561,10 +560,11 @@ input[type=search]:focus {
 .form-icons__search {
   display: flex;
   background-color: var(--violet);
+  border: none;
   border-radius: 0.5rem;
+  padding: 1.4rem;
 }
 .form-icons__search svg {
-  margin: 1.4rem;
   fill: var(--white);
 }
 @media screen and (min-width: 768px) {
@@ -702,7 +702,6 @@ input[type=search]:focus {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
     z-index: 100;
-    visibility: hidden; /*"IMPORTANT pour MODAL"*/
   }
   .form-modal .location {
     border-bottom: 1px solid var(--dark-gray);
@@ -1086,7 +1085,7 @@ input[type=search]:focus {
 @media screen and (min-width: 768px) {
   .footer-detail .detailContainer {
     align-items: center;
-    grid-template-columns: 2.25fr 0.75fr;
+    grid-template-columns: 2.35fr 0.65fr;
     padding-block: 2.3rem;
   }
 }
