@@ -4,7 +4,7 @@
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: left bottom;
 
   margin-block-end: calc(7.2rem + 5rem / 2);
   background-image: url("../assets/bg-pattern-header-375.svg");
@@ -29,24 +29,17 @@
 
   @include tablette {
     padding-block-start: 4.2rem;
-    padding-block-end: 8.6rem;
-  }
-
-  @include desktop {
   }
 
   &-logo {
-    color: $white;
+    color: $white-fixed;
     text-transform: lowercase;
   }
 
   &-toggle-theme {
-    // background-color: green;
-    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    grid-template-columns: repeat(3, 1fr);
     column-gap: 1.6rem;
   }
 
@@ -101,7 +94,7 @@
       }
     }
 
-    // classe Importante pour le toggle du dark mode: a rajouter sur la classe nav-darkMode
+    // CLASSE Importante pour le toggle du dark mode: a rajouter sur la classe nav-darkMode
     &.dark > span {
       background-color: $very-dark-blue;
 
@@ -129,15 +122,27 @@
   left: 50%;
   transform: translateX(-50%);
   top: calc(100% - 4rem);
+
+  /*
+  2.4 * 2 car on à rajouter 2.4rem de padding 
+  sur les coté au niveau de la nav
+  */
   width: calc(100% - 2.4rem * 2);
-  max-width: calc(111rem - 4rem * 2);
+  // ------------------------------------------
+
+  max-width: 111rem;
   display: grid;
 
-  // Modal !important
+  // Modal !important : necesssaire pour mettre le formulaire en opacité
   z-index: 10;
 
   @include tablette {
+    /*  
+    4 * 2 car on à rajouter 4rem de padding 
+    sur les cotés au niveau de la nav a partis de 768px
+    */
     width: calc(100% - 4rem * 2);
+    // ------------------------------------------------------------
     grid-template-columns: 1fr 2fr;
   }
 
@@ -149,30 +154,13 @@
 
     @include tablette {
       justify-content: initial;
-
-      & > :is(:nth-child(1), :nth-child(2), input[type="checkox"]) {
-        margin-inline-end: 1.6rem;
-      }
-
-      &:not(:last-child) {
-        padding-inline-start: clamp(2.4rem, 1.829rem + 0.952vw, 3.2rem);
-        border-right: 0.1rem solid $dark-gray;
-      }
-    }
-
-    &:nth-child(2) {
-      display: none;
-
-      @include tablette {
-        display: flex;
-      }
+      border-right: 0.1rem solid $dark-gray;
     }
   }
-
+  // ICONS OF FILTER BY TITLE
   &-icons {
     order: 1;
     display: flex;
-    align-items: center;
 
     @include tablette {
       order: 0;
@@ -182,6 +170,10 @@
       border: none;
       background-color: transparent;
       margin-inline-end: 2.4rem;
+
+      svg {
+        fill: $dark-gray;
+      }
 
       @include tablette {
         display: none;
@@ -196,16 +188,15 @@
       padding: 1.4rem;
 
       svg {
-        fill: $white;
+        fill: $white-fixed;
       }
 
       @include tablette {
-        order: 0;
+        margin-inline-end: 1.6rem;
+        padding: 0 0 0 1.4rem;
         background-color: transparent;
-        padding: 0;
 
         svg {
-          margin: 0;
           fill: $violet;
         }
       }
@@ -224,14 +215,19 @@
       padding-inline-start: 2.4rem;
 
       &-icon {
-        fill: $violet;
         margin-inline-end: 1.6rem;
+
+        @include mobile {
+          margin-inline-end: 0;
+        }
+        @include tablette {
+          margin-inline-end: 1.6rem;
+        }
       }
 
       &-input {
         border: none;
         background: transparent;
-        margin-inline-end: 2rem;
       }
     }
 
@@ -323,7 +319,7 @@
         border: none;
         text-transform: capitalize;
         background-color: $violet;
-        color: $white;
+        color: $white-fixed;
         padding-block: 1.6rem;
         padding-inline: 1.4rem;
         border-radius: 0.5rem;
@@ -341,26 +337,24 @@
       position: absolute;
       background-color: $white;
       border-radius: 1rem;
-      top: calc(100% + 5rem);
+      top: calc(100% + 5rem); /*5rem correspond a la valeur e la maquette*/
       width: 100%;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr;
       z-index: 100;
-      // visibility: hidden; /*"IMPORTANT pour MODAL"*/
+
+      /*"IMPORTANT pour MODAL"*/
+      visibility: hidden;
 
       .location {
         border-bottom: 1px solid $dark-gray;
         border-right: none;
-
         margin-block-start: 2.4rem;
         padding-block-end: 2.4rem;
       }
 
       .fulltime {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        padding-block: 2.4rem;
-        padding-inline: 2.4rem;
+        padding: 2.4rem;
 
         &__container {
           padding-inline-start: 0;
@@ -376,6 +370,7 @@
         &-btn {
           padding-block: 1.6rem;
           width: 100%;
+          max-width: 28rem;
           margin-inline: auto;
         }
       }
@@ -385,16 +380,19 @@
 
 // Main
 .main {
-  // visibility: hidden;
   .cards {
     display: grid;
     column-gap: 1.1rem;
     row-gap: 4rem;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(27.2rem, 1fr)
-    ); /* taille minimum du container pour un écran de 320px*/
+
+    /* taille minimum du container pour un écran de 280px*/
+    grid-template-columns: repeat(auto-fit, minmax(23.2rem, 1fr));
     margin-block-end: 3.2rem;
+
+    @include mobile {
+      /* taille minimum du container pour un écran a partis de 320px*/
+      grid-template-columns: repeat(auto-fit, minmax(27.2rem, 1fr));
+    }
 
     @include tablette {
       margin-block-end: 5.6rem;
@@ -406,7 +404,6 @@
     border-radius: 0.6rem;
     padding-block-start: 5rem;
     padding-inline-start: 3.2rem;
-    // max-width: 35rem;
 
     // Hover
     &:hover {
@@ -417,14 +414,14 @@
 
     &__logo {
       position: absolute;
+      height: 5rem;
+      width: 5rem;
       bottom: calc(100% - 5rem / 2);
       right: calc(100% - 5rem - 3.2rem);
       background-color: #e99210;
-      height: 5rem;
-      width: 5rem;
       border-radius: 1.5rem;
       display: flex;
-      // align-items: center;
+      place-content: center;
     }
 
     &__img {
@@ -443,7 +440,7 @@
     &__position {
       font-size: 2rem;
       margin-block-end: 1.7rem;
-      text-transform: capitalize;
+
       transition: 0.2s ease-in-out;
     }
 
@@ -453,7 +450,6 @@
     }
 
     &__location {
-      text-transform: capitalize;
       color: $violet;
       margin-block-end: 3.6rem;
     }
@@ -462,14 +458,13 @@
 
 // Footer
 .footer {
-  // background-color: red;
-  padding-block-end: 6.1rem;
+  margin-block-end: 6.1rem;
   .load-more {
     display: block;
     margin-inline: auto;
     border: none;
     background-color: $violet;
-    color: $white;
+    color: $white-fixed;
     text-transform: capitalize;
     padding: 1.2rem 3rem;
     border-radius: 0.5rem;

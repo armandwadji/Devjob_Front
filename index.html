@@ -9,11 +9,11 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="darken">
     <!-- modal + form Modal en js -->
     <div class="modal"></div>
 
-    <!-- HEADER -->
+    <!-- HOME HEADER -->
     <header class="header">
       <!-- NAVBAR -->
       <nav class="nav container">
@@ -32,16 +32,26 @@
       </nav>
 
       <!-- FORM -->
-      <!-- Modal à rajouter ici -->
+      <!-- modal à rajouter ici -->
       <form class="form">
+        <!-- filter by title -->
         <div class="form-title">
           <div class="form-icons">
             <!-- onClick open modal qui passe en visibility: visible -->
-            <button class="form-icons__filter icon">
-              <img src="assets/icon-filter.svg" alt="filter-icon" />
+            <button type="button" class="form-icons__filter icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                width="20"
+                height="20"
+              >
+                <path
+                  d="M19.108 0H.86a.86.86 0 0 0-.764.455.833.833 0 0 0 .068.884l6.685 9.202.007.01c.242.32.374.708.375 1.107v7.502a.825.825 0 0 0 .248.594.865.865 0 0 0 .942.18l3.756-1.4c.337-.1.56-.41.56-.784v-6.092c0-.399.132-.787.375-1.108l.007-.009 6.685-9.202c.19-.26.217-.6.068-.884A.86.86 0 0 0 19.108 0z"
+                />
+              </svg>
             </button>
 
-            <button class="form-icons__search">
+            <button type="button" class="form-icons__search">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -59,19 +69,15 @@
             placeholder="Filter by title, companies, expertise"
           />
         </div>
+
+        <!--Modal form  -->
         <div class="form-modal">
           <div class="location">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 17 24"
-              width="17"
-              height="24"
+            <img
+              src="assets/icon-location.svg"
+              alt="icon-location"
               class="location-icon"
-            >
-              <path
-                d="M14.358 2.451A8.3 8.3 0 0 0 8.448 0a8.3 8.3 0 0 0-5.911 2.451c-2.922 2.925-3.285 8.427-.786 11.76l6.697 9.683 6.687-9.669c2.508-3.347 2.145-8.85-.777-11.774zm-5.833 8.894a3.057 3.057 0 0 1-3.051-3.054 3.057 3.057 0 0 1 3.05-3.055 3.057 3.057 0 0 1 3.052 3.055 3.057 3.057 0 0 1-3.051 3.054z"
-              />
-            </svg>
+            />
 
             <input
               class="location-input"
@@ -97,7 +103,9 @@
       </form>
     </header>
 
+    <!-- HOME MAIN -->
     <main class="main container">
+      <!-- LES CARDS -->
       <ul class="cards">
         <li class="card">
           <a href="#" id="">
@@ -234,8 +242,9 @@
       </ul>
     </main>
 
+    <!-- HOOME FOOTER -->
     <footer class="footer container">
-      <button class="load-more">load more</button>
+      <button type="button" class="load-more">load more</button>
     </footer>
 
     <!-- Script -->

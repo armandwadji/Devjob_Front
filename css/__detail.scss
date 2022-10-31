@@ -4,27 +4,21 @@
   @include tablette {
     margin-block-end: 13.2rem;
   }
-
-  a {
-    transition: 0.2s ease-in-out;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
 }
 
+// Permet de donné une nouvelle taille maximum au layout
 .detail {
   max-width: 73rem;
-  margin-inline: auto;
   height: auto;
-  top: calc(100% - 1.5rem);
+  top: calc(100% - 1.5rem); /*Pour les screen < 768px*/
 
   @include tablette {
-    top: calc(100% - 4rem);
+    top: calc(100% - 4rem); /*Pour les screen > 768px*/
   }
 
   button {
     transition: 0.2s ease-in-out;
+
     &:hover {
       opacity: 0.8;
     }
@@ -32,8 +26,6 @@
 }
 
 .company {
-  background-color: $white;
-  display: grid;
   place-items: center;
   padding-block: 3.2rem;
 
@@ -45,15 +37,15 @@
 
   &-logo {
     position: absolute;
-    bottom: calc(100% - 5rem / 2);
-    right: calc(50% - 5rem / 2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e99210;
     height: 5rem;
     width: 5rem;
     border-radius: 1.5rem;
+    background-color: #e99210;
+    bottom: calc(100% - 5rem / 2);
+    // right: calc(50% - 5rem / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include tablette {
       position: initial;
@@ -100,34 +92,50 @@
     }
   }
 
+  // A MODIFIER POUR LE DARKMODE
   &-btn {
     background-color: $violetOpacity;
-    color: $violet;
+    color: $violet-white;
     padding: 1.6rem 2rem;
     border-radius: 0.5rem;
     text-transform: capitalize;
     font-weight: 700;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
 .detailContainer {
+  // position: initial;
+  // transform: translate(0);
+  // width: 100%;
+
   background-color: $white;
-  position: initial;
-  transform: translate(0);
-  border-radius: 0;
   margin-inline: auto;
   border-radius: 0.6rem;
-  width: 100%;
   padding: 4rem 2.4rem;
 
   @include tablette {
     padding: 4.8rem;
-    grid-template-columns: 1fr;
+  }
+}
+
+.main-detail {
+  margin-block-end: 6.4rem;
+
+  @include tablette {
+    margin-block-end: 5.3rem;
+  }
+
+  @include desktop {
+    margin-block-end: 8rem;
   }
 }
 
 .mainHeader {
-  // background-color: red;
   display: grid;
   row-gap: 5rem;
   margin-block-end: 3.2rem;
@@ -139,18 +147,19 @@
     align-items: center;
   }
 
-  &-postAt {
-    padding-block-end: 0.8rem;
+  &-infos {
+    & > :not(:last-child) {
+      padding-block-end: 0.8rem;
+    }
+  }
 
+  &-postAt {
     span {
       text-transform: capitalize;
     }
   }
 
   &-position {
-    padding-block-end: 0.8rem;
-    text-transform: capitalize;
-
     @include tablette {
       font-size: 2.8rem;
     }
@@ -164,7 +173,7 @@
   &-btn {
     border: none;
     background-color: $violet;
-    color: $white;
+    color: $white-fixed;
     padding-block: 1.6rem;
     border-radius: 0.5rem;
     text-transform: capitalize;
@@ -179,7 +188,7 @@
   }
 }
 
-.requirements {
+.informations {
   margin-block-end: 4rem;
 
   @include desktop {
@@ -232,23 +241,12 @@
   }
 }
 
-.main-detail {
-  margin-block-end: 6.4rem;
-
-  @include tablette {
-    margin-block-end: 5.3rem;
-  }
-
-  @include desktop {
-    margin-block-end: 8rem;
-  }
-}
-
 .footer {
   &-detail {
     background-color: $white;
 
     .detailContainer {
+      display: grid;
       border-radius: 0;
       padding: 0;
       background-color: transparent;
@@ -263,6 +261,7 @@
 
   &-infos {
     display: none;
+    text-transform: capitalize;
 
     @include tablette {
       display: block;
@@ -279,7 +278,7 @@
     border-radius: 0.5rem;
     padding-block: 1.6rem;
     margin: 2.5rem;
-    color: $white;
+    color: $white-fixed;
     text-transform: capitalize;
 
     @include tablette {

@@ -49,6 +49,7 @@ a {
 
 input[type="search"] {
   border: none;
+  background-color: transparent;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,6 +79,7 @@ input[type="search"] {
     color: $very-dark-blue;
     opacity: 0.5;
     transition: 0.2s ease-in-out;
+    padding-inline-start: 2rem;
 
     @include xtrasmallmobile {
       padding-inline-start: 1rem;
@@ -88,9 +90,22 @@ input[type="search"] {
     }
   }
 
+  &[class="location-input"] {
+    width: 100%;
+    &::placeholder {
+      @include xtrasmallmobile {
+        padding-inline-start: 0;
+      }
+    }
+  }
+
   &:focus {
     outline: none;
   }
+}
+
+button {
+  color: $white-fixed;
 }
 
 .container {
@@ -101,11 +116,15 @@ input[type="search"] {
   @include tablette {
     padding-inline: 4rem;
   }
+
+  @include desktop {
+    padding-inline: 0;
+  }
 }
 
 @include smallmobile {
   .modal {
-    visibility: hidden; /* modal */
+    visibility: hidden; /* modal en dessous du body à mettre en visible */
     &::after {
       content: "";
       position: absolute;
