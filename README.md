@@ -5,7 +5,7 @@
   </h1>
 </div> 
 
-lien du site : [devjob](https://devjobsaw.netlify.app/)
+lien du site : [devjobs](https://devjobsaw.netlify.app/)
 
 <img width="2560" alt="comfy store homeScreen header" src="https://user-images.githubusercontent.com/90448006/199209995-29551e76-0c4c-41da-bcef-929150a69d00.jpg">
 
