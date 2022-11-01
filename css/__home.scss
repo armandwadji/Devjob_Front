@@ -154,7 +154,7 @@
 
     @include tablette {
       justify-content: initial;
-      border-right: 0.1rem solid $dark-gray;
+      border-right: 0.1rem solid $dark-gray-opacity;
     }
   }
   // ICONS OF FILTER BY TITLE
@@ -211,7 +211,7 @@
     .location {
       display: flex;
       align-items: center;
-      border-right: 1px solid $dark-gray;
+      border-right: 1px solid $dark-gray-opacity;
       padding-inline-start: 2.4rem;
 
       &-icon {
@@ -346,7 +346,7 @@
       visibility: hidden;
 
       .location {
-        border-bottom: 1px solid $dark-gray;
+        border-bottom: 1px solid $dark-gray-opacity;
         border-right: none;
         margin-block-start: 2.4rem;
         padding-block-end: 2.4rem;
@@ -408,7 +408,7 @@
     // Hover
     &:hover {
       .card__position {
-        color: $dark-gray;
+        color: #6e8098;
       }
     }
 
@@ -418,14 +418,14 @@
       width: 5rem;
       bottom: calc(100% - 5rem / 2);
       right: calc(100% - 5rem - 3.2rem);
-      background-color: #e99210;
+      // background-color: #e99210;
       border-radius: 1.5rem;
       display: flex;
       place-content: center;
     }
 
     &__img {
-      transform: scale(0.8);
+      transform: scale(0.6);
     }
 
     &__postAt {

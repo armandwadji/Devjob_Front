@@ -40,7 +40,7 @@
     height: 5rem;
     width: 5rem;
     border-radius: 1.5rem;
-    background-color: #e99210;
+    // background-color: #e99210;
     bottom: calc(100% - 5rem / 2);
     // right: calc(50% - 5rem / 2);
     display: flex;
@@ -55,7 +55,7 @@
       border-bottom-left-radius: 0.6rem;
 
       img {
-        transform: scale(2.1);
+        transform: scale(0.8);
       }
     }
   }
@@ -67,7 +67,7 @@
 
     @include tablette {
       padding-block-start: 0;
-      padding-inline: 4rem;
+      padding-inline: 4.8rem;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -99,6 +99,7 @@
     padding: 1.6rem 2rem;
     border-radius: 0.5rem;
     text-transform: capitalize;
+    text-align: center;
     font-weight: 700;
     transition: 0.2s ease-in-out;
 
@@ -177,6 +178,7 @@
     padding-block: 1.6rem;
     border-radius: 0.5rem;
     text-transform: capitalize;
+    text-align: center;
   }
 }
 

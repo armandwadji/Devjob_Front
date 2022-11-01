@@ -16,6 +16,7 @@
   --gray: #9daec2;
   --dark-gray: #6e8098;
   --dark-gray-txt: #6e8098;
+  --dark-gray-opacity: rgba(110, 128, 152, 0.2);
 }
 
 $violet: var(--violet);
@@ -28,6 +29,8 @@ $white-fixed: #ffffff;
 $light-gray: var(--light-gray);
 $gray: var(--gray);
 $dark-gray: var(--dark-gray);
+
+$dark-gray-opacity: var(--dark-gray-opacity);
 $violetOpacity: var(--violetOpacity);
 
 // ******** COLORS CONTEXT ********
@@ -46,10 +49,10 @@ $h3-line-height: calc(24 / 20);
 $h4-line-height: calc(18 / 14);
 
 //******** GLOBAL  ********
-// *:focus {
-//   outline: 0.2rem solid $violet;
-//   outline-offset: 1rem;
-// }
+*:focus {
+  outline: 0.2rem solid $violet-white;
+  outline-offset: 1rem;
+}
 
 .darken {
   --white: #19202d;
@@ -60,3 +63,15 @@ $h4-line-height: calc(18 / 14);
   --dark-gray: #ffffff;
   --dark-gray-txt: #9daec2;
 }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --white: #19202d;
+//     --very-dark-blue: #ffffff;
+//     --light-gray: #121721;
+//     --violetOpacity: rgba(255, 255, 255, 0.1);
+//     --violet-white: #ffffff;
+//     --dark-gray: #ffffff;
+//     --dark-gray-txt: #9daec2;
+//   }
+// }

@@ -53,6 +53,7 @@ input[type="search"] {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: $very-dark-blue;
   caret-color: $violet;
 
   &:hover {
