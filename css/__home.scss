@@ -208,6 +208,19 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
+    // ****** ANIMATION MODAL *******
+    transform-origin: center top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in;
+    // ------------------------------
+
+    @include tablette {
+      transform: scaleY(1);
+      opacity: 1;
+      visibility: visible;
+    }
+
     .location {
       display: flex;
       align-items: center;
@@ -217,9 +230,9 @@
       &-icon {
         margin-inline-end: 1.6rem;
 
-        @include mobile {
-          margin-inline-end: 0;
-        }
+        // @include mobile {
+        //   margin-inline-end: 0;
+        // }
         @include tablette {
           margin-inline-end: 1.6rem;
         }
@@ -374,6 +387,14 @@
           margin-inline: auto;
         }
       }
+    }
+  }
+
+  //ANIMATION MODAL
+  &.modal {
+    .form-modal {
+      transform: scaleY(1);
+      opacity: 1;
     }
   }
 }

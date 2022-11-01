@@ -92,8 +92,11 @@ input[type="search"] {
   }
 
   &[class="location-input"] {
-    width: 100%;
+    width: 80%;
     &::placeholder {
+      @include mobile {
+        padding-inline-start: 0;
+      }
       @include xtrasmallmobile {
         padding-inline-start: 0;
       }

@@ -372,7 +372,19 @@ input[type=search]::placeholder {
   }
 }
 input[type=search][class=location-input] {
-  width: 100%;
+  width: 80%;
+}
+@media screen and (min-width: 375px) {
+  input[type=search][class=location-input]::-moz-placeholder {
+    padding-inline-start: 0;
+  }
+  input[type=search][class=location-input]:-ms-input-placeholder {
+    padding-inline-start: 0;
+  }
+  input[type=search][class=location-input]::placeholder {
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
+  }
 }
 @media screen and (max-width: 320px) {
   input[type=search][class=location-input]::-moz-placeholder {
@@ -620,6 +632,17 @@ button {
 .form-modal {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  transform-origin: center top;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in;
+}
+@media screen and (min-width: 768px) {
+  .form-modal {
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .form-modal .location {
   display: flex;
@@ -631,12 +654,6 @@ button {
 .form-modal .location-icon {
   -webkit-margin-end: 1.6rem;
           margin-inline-end: 1.6rem;
-}
-@media screen and (min-width: 375px) {
-  .form-modal .location-icon {
-    -webkit-margin-end: 0;
-            margin-inline-end: 0;
-  }
 }
 @media screen and (min-width: 768px) {
   .form-modal .location-icon {
@@ -780,6 +797,10 @@ button {
     margin-inline: auto;
   }
 }
+.form.modal .form-modal {
+  transform: scaleY(1);
+  opacity: 1;
+}
 
 .main .cards {
   display: grid;
@@ -921,6 +942,9 @@ button {
   align-items: center;
   justify-content: center;
 }
+.company-logo img {
+  transform: scale(0.8);
+}
 @media screen and (min-width: 768px) {
   .company-logo {
     position: initial;
@@ -928,9 +952,6 @@ button {
     width: 14rem;
     border-radius: 0;
     border-bottom-left-radius: 0.6rem;
-  }
-  .company-logo img {
-    transform: scale(0.8);
   }
 }
 .company-infos {
