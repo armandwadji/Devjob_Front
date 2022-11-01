@@ -27,6 +27,7 @@ const timestampPost = (date) => {
   const datePost = date;
   const today = new Date().getTime();
 
+  // On cacule la difference etre le post et date actuel
   const t = today - datePost;
 
   const SECONDE = 1000;
@@ -98,6 +99,7 @@ const timestampPost = (date) => {
 };
 // -------------------------------------------------------
 
+// *********************** ID RECUPERATION ************************
 //fonction qui récupère l'id de lélément cliqué
 const idrecuparation = async () => {
   const params = new URLSearchParams(window.location.search);

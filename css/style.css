@@ -1149,6 +1149,7 @@ button {
   margin: 2.5rem;
   color: #ffffff;
   text-transform: capitalize;
+  text-align: center;
 }
 @media screen and (min-width: 768px) {
   .footer-btn {

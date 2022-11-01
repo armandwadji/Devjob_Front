@@ -17,7 +17,7 @@ const displayCards = (jobs) => {
       }) => {
         return `
             <li class="card">
-                <a href="detail.html?id=${id}" id="${id}" target="_blank">
+                <a href="detail.html?id=${id}" id="${id}" >
                 <div class="card__logo" style="background-color: ${logoBackground}">
                     <img class="card__img" src="https://ecf-dwwm.cefim-formation.org${logo}" alt="${company}-logo" />
                 </div>
