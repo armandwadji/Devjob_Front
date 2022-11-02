@@ -939,7 +939,6 @@ button {
   border-radius: 1.5rem;
   bottom: calc(100% - 2.5rem);
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 .company-logo img {
