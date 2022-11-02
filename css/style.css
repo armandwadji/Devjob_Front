@@ -1254,4 +1254,37 @@ button {
   60%, 100% {
     transform: rotate(360deg) translateY(-200%);
   }
+}
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+  visibility: hidden;
+}
+.progress-container.show-loader {
+  visibility: visible;
+}
+
+.progress {
+  width: 100.8px;
+  height: 16.8px;
+  -webkit-mask: linear-gradient(90deg, var(--violet) 70%, rgba(0, 0, 0, 0) 0) left/20% 100%;
+          mask: linear-gradient(90deg, var(--violet) 70%, rgba(0, 0, 0, 0) 0) left/20% 100%;
+  background: linear-gradient(var(--violet) 0 0) left/0% 100% no-repeat var(--light-gray);
+  -webkit-animation: progress-422c3u 2s infinite steps(6);
+          animation: progress-422c3u 2s infinite steps(6);
+}
+
+@-webkit-keyframes progress-422c3u {
+  100% {
+    background-size: 120% 100%;
+  }
+}
+
+@keyframes progress-422c3u {
+  100% {
+    background-size: 120% 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

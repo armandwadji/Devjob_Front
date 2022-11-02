@@ -10,6 +10,5 @@ import loadMore from "./js/requests/LoadMore.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
   const jobs = await loadMore();
-
   displayCards(jobs);
 });

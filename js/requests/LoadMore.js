@@ -1,3 +1,4 @@
+import { hiddeprogress, showprogress } from "../animations/ToggleLoading.js";
 import displayCards from "../display/DisplayCards.js";
 import { getElement, urlCards } from "../utils.js";
 import fetchCards from "./FetchCards.js";
@@ -9,11 +10,13 @@ const loadMore = async () => {
   let index = jobs.length - 3;
 
   loadMoreBtn.addEventListener("click", async () => {
+    // Progress loader visible
+    showprogress();
     const newUrl = `${urlCards}?offset=${(index += 3)}&limit=3`;
     const newCards = await fetchCards(newUrl);
-    const { jobs: newJobs } = newCards;
+    const { jobs: newJobs, total } = newCards;
 
-    if (newJobs.length < 3) {
+    if (jobs.length === total) {
       loadMoreBtn.textContent = "plus de jobs disponible";
       loadMoreBtn.setAttribute("disabled", true);
       loadMoreBtn.style = "background-color: red ";
@@ -22,6 +25,9 @@ const loadMore = async () => {
     }
 
     displayCards(jobs);
+
+    // Progress loader hidden
+    hiddeprogress();
   });
   return jobs;
 };
