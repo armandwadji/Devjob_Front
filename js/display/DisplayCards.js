@@ -1,9 +1,11 @@
+import { hiddeLoading } from "../animations/ToggleLoading.js";
 import { getElement, timestampPost } from "../utils.js";
 
 const cards = getElement(".cards");
 
 const displayCards = (jobs) => {
   const cardList = jobs
+    .sort((a, b) => b.postedAt - a.postedAt)
     .map(
       ({
         company,
@@ -35,6 +37,7 @@ const displayCards = (jobs) => {
     .join("");
 
   cards.innerHTML = cardList;
+  hiddeLoading();
 };
 
 export default displayCards;

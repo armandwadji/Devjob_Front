@@ -1,10 +1,10 @@
+import { hiddeLoading } from "../animations/ToggleLoading.js";
 import { getElement, timestampPost } from "../utils.js";
 
 // On pointe vers les éléments nécéssaires:
 const companyDetail = getElement(".company");
 const mainDetail = getElement(".main-detail");
 const footerDetail = getElement(".footer-detail");
-console.log(footerDetail);
 
 const displayDetail = ({
   apply,
@@ -121,6 +121,7 @@ const displayDetail = ({
                               </div>
                             </div>
                             `;
+  hiddeLoading();
 };
 
 export default displayDetail;
