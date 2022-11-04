@@ -806,7 +806,7 @@ button {
   display: grid;
   -moz-column-gap: 1.1rem;
        column-gap: 1.1rem;
-  row-gap: 4rem;
+  row-gap: 5rem;
   /* taille minimum du container pour un écran de 280px*/
   grid-template-columns: repeat(auto-fit, minmax(23.2rem, 1fr));
   -webkit-margin-after: 3.2rem;
@@ -820,8 +820,15 @@ button {
 }
 @media screen and (min-width: 768px) {
   .main .cards {
+    row-gap: 6.5rem;
     -webkit-margin-after: 5.6rem;
             margin-block-end: 5.6rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main .cards {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
   }
 }
 .main .card {
@@ -891,6 +898,19 @@ button {
 }
 .footer .load-more:hover {
   background-color: var(--light-violet);
+}
+
+.emptySearch {
+  display: block;
+  margin-inline: auto;
+}
+.emptySearch-img {
+  margin-inline: auto;
+  -webkit-margin-after: 5rem;
+          margin-block-end: 5rem;
+}
+.emptySearch-message {
+  text-align: center;
 }
 
 .header-detail {

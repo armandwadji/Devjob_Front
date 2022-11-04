@@ -20,7 +20,6 @@ document.addEventListener("click", (e) => {
 
   if (element.classList.contains("modal")) {
     modal.style.visibility = "hidden";
-    form.style.visibility = "visible";
     form.classList.toggle("modal");
   }
 });

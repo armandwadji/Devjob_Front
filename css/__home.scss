@@ -404,7 +404,7 @@
   .cards {
     display: grid;
     column-gap: 1.1rem;
-    row-gap: 4rem;
+    row-gap: 5rem;
 
     /* taille minimum du container pour un écran de 280px*/
     grid-template-columns: repeat(auto-fit, minmax(23.2rem, 1fr));
@@ -416,7 +416,12 @@
     }
 
     @include tablette {
+      row-gap: 6.5rem;
       margin-block-end: 5.6rem;
+    }
+
+    @include desktop {
+      column-gap: 3rem;
     }
   }
   .card {
@@ -495,5 +500,19 @@
     &:hover {
       background-color: $light-violet;
     }
+  }
+}
+
+// Empty search icon
+.emptySearch {
+  display: block;
+  margin-inline: auto;
+  &-img {
+    margin-inline: auto;
+    margin-block-end: 5rem;
+  }
+
+  &-message {
+    text-align: center;
   }
 }
