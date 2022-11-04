@@ -1,4 +1,4 @@
-const fetchCards = async (url) => {
+const fetchData = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -8,4 +8,4 @@ const fetchCards = async (url) => {
   }
 };
 
-export default fetchCards;
+export default fetchData;

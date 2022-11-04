@@ -41,7 +41,7 @@ const displayCards = (jobs) => {
   } else {
     cardList = `  <li class="emptySearch">
                     <img class="emptySearch-img" src="../../assets/icon-search.svg" alt="empty serch logo" />
-                    <h3 class="emptySearch-message">Aucunes annonces disponibles</h3> 
+                    <h3 class="emptySearch-message">no ads available</h3> 
                   </li>
                 `;
   }

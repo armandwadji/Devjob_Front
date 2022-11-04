@@ -839,6 +839,7 @@ button {
           padding-block-start: 5rem;
   -webkit-padding-start: 3.2rem;
           padding-inline-start: 3.2rem;
+  max-width: 52.5rem;
 }
 .main .card:hover .card__position {
   color: #6e8098;

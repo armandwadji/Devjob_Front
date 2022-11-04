@@ -1,6 +1,5 @@
 const URLCARDS = "https://ecf-dwwm.cefim-formation.org/api/jobs";
-const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job/";
-const URLCARDSEARCH = "https://ecf-dwwm.cefim-formation.org/api/jobs/search?";
+const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job";
 
 // &location=United&fulltime=1&limit=12
 
@@ -124,21 +123,11 @@ const loadMoreEnabled = () => {
   loadMoreBtn.style = "background-color: #5964e0 ";
 };
 
-const loadMoreHidden = () => {
-  const loadMoreBtn = getElement(".load-more");
-  loadMoreBtn.style = "visibility: hidden ";
-};
-
-const loadMoreVisible = () => {
-  const loadMoreBtn = getElement(".load-more");
-  loadMoreBtn.style = "visibility: visible ";
-};
 // --------------------------------------------------------
 
 export {
   URLCARDS,
   URLCARD,
-  URLCARDSEARCH,
   getElement,
   setStorageItem,
   getStorageItem,
@@ -146,6 +135,4 @@ export {
   idrecuparation,
   loadMoreDisabled,
   loadMoreEnabled,
-  loadMoreHidden,
-  loadMoreVisible,
 };

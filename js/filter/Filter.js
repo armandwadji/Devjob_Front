@@ -1,12 +1,11 @@
 import { hiddeLoading, showLoading } from "../animations/ToggleLoading.js";
 import displayCards from "../display/DisplayCards.js";
-import fetchCards from "../requests/FetchCards.js";
+import fetchData from "../requests/FetchData.js";
 import {
   getElement,
   loadMoreEnabled,
   setStorageItem,
   URLCARDS,
-  URLCARDSEARCH,
 } from "../utils.js";
 
 // VARIABLES GLOBAL
@@ -53,12 +52,12 @@ submitBtn.addEventListener("click", async (e) => {
   showLoading(); //loader visible
 
   if (checked || company || location) {
-    urlSearch = `${URLCARDSEARCH}text=${company}&fulltime=${checked}&location=${location}`;
-    const cards = await fetchCards(urlSearch);
+    urlSearch = `${URLCARDS}/search?text=${company}&fulltime=${checked}&location=${location}`;
+    const cards = await fetchData(urlSearch);
     jobs = cards.jobs;
   } else {
     urlSearch = URLCARDS;
-    const cards = await fetchCards(urlSearch);
+    const cards = await fetchData(urlSearch);
     jobs = cards.jobs;
   }
 

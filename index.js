@@ -5,12 +5,12 @@ import "./js/filter/Filter.js";
 import "./js/requests/LoadMore.js";
 
 // specific imports
-import fetchCards from "./js/requests/FetchCards.js";
+import fetchData from "./js/requests/FetchData.js";
 import { setStorageItem, URLCARDS } from "./js/utils.js";
 import displayCards from "./js/display/DisplayCards.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
-  const cards = await fetchCards(URLCARDS);
+  const cards = await fetchData(URLCARDS);
   const { jobs } = await cards;
   displayCards(jobs);
   setStorageItem("url", URLCARDS);
