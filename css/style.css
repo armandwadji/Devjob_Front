@@ -901,8 +901,10 @@ button {
 }
 
 .emptySearch {
-  display: block;
-  margin-inline: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--light-gray);
 }
 .emptySearch-img {
   margin-inline: auto;
