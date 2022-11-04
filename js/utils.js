@@ -123,6 +123,16 @@ const loadMoreEnabled = () => {
   loadMoreBtn.disabled = false;
   loadMoreBtn.style = "background-color: #5964e0 ";
 };
+
+const loadMoreHidden = () => {
+  const loadMoreBtn = getElement(".load-more");
+  loadMoreBtn.style = "visibility: hidden ";
+};
+
+const loadMoreVisible = () => {
+  const loadMoreBtn = getElement(".load-more");
+  loadMoreBtn.style = "visibility: visible ";
+};
 // --------------------------------------------------------
 
 export {
@@ -136,4 +146,6 @@ export {
   idrecuparation,
   loadMoreDisabled,
   loadMoreEnabled,
+  loadMoreHidden,
+  loadMoreVisible,
 };

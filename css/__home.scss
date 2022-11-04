@@ -502,3 +502,17 @@
     }
   }
 }
+
+// Empty search icon
+.emptySearch {
+  display: block;
+  margin-inline: auto;
+  &-img {
+    margin-inline: auto;
+    margin-block-end: 5rem;
+  }
+
+  &-message {
+    text-align: center;
+  }
+}

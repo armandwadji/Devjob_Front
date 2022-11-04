@@ -900,6 +900,19 @@ button {
   background-color: var(--light-violet);
 }
 
+.emptySearch {
+  display: block;
+  margin-inline: auto;
+}
+.emptySearch-img {
+  margin-inline: auto;
+  -webkit-margin-after: 5rem;
+          margin-block-end: 5rem;
+}
+.emptySearch-message {
+  text-align: center;
+}
+
 .header-detail {
   -webkit-margin-after: 22rem;
           margin-block-end: 22rem;
