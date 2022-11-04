@@ -505,8 +505,10 @@
 
 // Empty search icon
 .emptySearch {
-  display: block;
-  margin-inline: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $light-gray;
   &-img {
     margin-inline: auto;
     margin-block-end: 5rem;
