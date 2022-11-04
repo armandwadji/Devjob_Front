@@ -430,6 +430,9 @@
     border-radius: 0.6rem;
     padding-block-start: 5rem;
     padding-inline-start: 3.2rem;
+    max-width: calc(
+      111rem / 2 - 3rem
+    ); //On divise par 2 pour avoir la moitié et on retire le column gap maximal.
 
     // Hover
     &:hover {

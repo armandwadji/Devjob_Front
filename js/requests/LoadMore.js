@@ -6,7 +6,7 @@ import {
   loadMoreDisabled,
   setStorageItem,
 } from "../utils.js";
-import fetchCards from "./FetchCards.js";
+import fetchData from "./FetchData.js";
 
 const loadMoreBtn = getElement(".load-more");
 
@@ -19,8 +19,7 @@ loadMoreBtn.addEventListener("click", async () => {
 
   showprogress(); // Progress loader visible
 
-  const newCards = await fetchCards(`${urlPaginaton}?limit=3&offset=${index}`);
-  index += 3;
+  const newCards = await fetchData(`${urlPaginaton}?limit=3&offset=${index}`);
 
   const { jobs: newJobs, total } = newCards;
 
