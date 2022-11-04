@@ -36,7 +36,10 @@ const displayCards = (jobs) => {
     )
     .join("");
 
-  cards.innerHTML = cardList;
+  jobs.length === 0
+    ? (cards.innerHTML = `<li>Aucunes annonces disponibles</li>`)
+    : (cards.innerHTML = cardList);
+
   hiddeLoading();
 };
 

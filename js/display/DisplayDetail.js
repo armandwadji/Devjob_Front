@@ -19,7 +19,6 @@ const displayDetail = ({
   requirements,
   role,
   website,
-  id /*A voir ou utilisé */,
 }) => {
   // On destructure le content et les items de requirements et roles en les renommant pour les différenciés
   const { content: contentRequirement, items: itemsRequirement } = requirements;
@@ -57,7 +56,7 @@ const displayDetail = ({
                               <div class="company-infos">
                                 <div class="company-site">
                                   <h3 class="company-site__title">${company}</h3>
-                                  <p class="company-url">${website}</p>
+                                  <p class="company-url">${company}.com</p>
                                 </div>
                                 <a href="${website}" class="company-btn" target="_blank">company site</a>
                               </div>

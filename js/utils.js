@@ -1,7 +1,8 @@
-const urlCards = "https://ecf-dwwm.cefim-formation.org/api/jobs";
-const urlCard = "https://ecf-dwwm.cefim-formation.org/api/job/";
-const urlCardsSearch =
-  "https://ecf-dwwm.cefim-formation.org/api/jobs/search?text=testing&location=United&fulltime=1";
+const URLCARDS = "https://ecf-dwwm.cefim-formation.org/api/jobs";
+const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job/";
+const URLCARDSEARCH = "https://ecf-dwwm.cefim-formation.org/api/jobs/search?";
+
+// &location=United&fulltime=1&limit=12
 
 //******* Méthode pour sélectionner plus facilemet la classe *******
 const getElement = (selection) => {
@@ -108,13 +109,31 @@ const idrecuparation = async () => {
 };
 // --------------------------------------------------------
 
+// *********************** BUTTON LOAD MORE ACTIF / INACTIF ************************
+const loadMoreDisabled = () => {
+  const loadMoreBtn = getElement(".load-more");
+  loadMoreBtn.textContent = "not more";
+  loadMoreBtn.disabled = true;
+  loadMoreBtn.style = "background-color: red ";
+};
+
+const loadMoreEnabled = () => {
+  const loadMoreBtn = getElement(".load-more");
+  loadMoreBtn.textContent = "load more";
+  loadMoreBtn.disabled = false;
+  loadMoreBtn.style = "background-color: #5964e0 ";
+};
+// --------------------------------------------------------
+
 export {
-  urlCards,
-  urlCard,
-  urlCardsSearch,
+  URLCARDS,
+  URLCARD,
+  URLCARDSEARCH,
   getElement,
   setStorageItem,
   getStorageItem,
   timestampPost,
   idrecuparation,
+  loadMoreDisabled,
+  loadMoreEnabled,
 };

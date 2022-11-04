@@ -1,35 +1,37 @@
 import { hiddeprogress, showprogress } from "../animations/ToggleLoading.js";
 import displayCards from "../display/DisplayCards.js";
-import { getElement, urlCards } from "../utils.js";
+import {
+  getElement,
+  getStorageItem,
+  loadMoreDisabled,
+  setStorageItem,
+} from "../utils.js";
 import fetchCards from "./FetchCards.js";
 
 const loadMoreBtn = getElement(".load-more");
-const loadMore = async () => {
-  const cards = await fetchCards(urlCards);
-  let { jobs } = cards;
-  let index = jobs.length - 3;
 
-  loadMoreBtn.addEventListener("click", async () => {
-    // Progress loader visible
-    showprogress();
-    const newUrl = `${urlCards}?offset=${(index += 3)}&limit=3`;
-    const newCards = await fetchCards(newUrl);
-    const { jobs: newJobs, total } = newCards;
+loadMoreBtn.addEventListener("click", async () => {
+  const urlPaginaton = getStorageItem("url"); //url pour la pagination
 
-    if (jobs.length === total) {
-      loadMoreBtn.textContent = "plus de jobs disponible";
-      loadMoreBtn.setAttribute("disabled", true);
-      loadMoreBtn.style = "background-color: red ";
-    } else {
-      jobs = [...jobs, ...newJobs];
-    }
+  let jobs = getStorageItem("jobs"); // Liste des jobs stockés dans le localStorage
 
-    displayCards(jobs);
+  let index = jobs.length; // Index nécéssaire pour la pagination
 
-    // Progress loader hidden
-    hiddeprogress();
-  });
-  return jobs;
-};
+  showprogress(); // Progress loader visible
 
-export default loadMore;
+  const newCards = await fetchCards(`${urlPaginaton}?limit=3&offset=${index}`);
+  index += 3;
+
+  const { jobs: newJobs, total } = newCards;
+
+  if (jobs.length < total) {
+    jobs = [...jobs, ...newJobs];
+    setStorageItem("jobs", jobs);
+  } else {
+    loadMoreDisabled(); //Méthode qui disabled le button load more
+  }
+
+  displayCards(jobs);
+
+  hiddeprogress(); // Progress loader hidden
+});
