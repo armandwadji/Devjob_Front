@@ -9,7 +9,6 @@
   --midnight: #121721;
 
   // SECONDARY
-
   --white: #ffffff;
   --whiteOpacity: rgba(255, 255, 255, 0.1);
   --light-gray: #f2f2f2;
@@ -38,15 +37,12 @@ $background: var(--light-gray);
 $text: var(--dark-gray-txt);
 $titles: var(--very-dark-blue);
 
-//******** Variables globals ********
-$text-line-height: calc(26 / 16);
-
 //******** INTERLIGNE ********
-/* Interligne de 34px pour une police de 28px */
-$h1-line-height: calc(34 / 28);
+$h1-line-height: calc(34 / 28); /* Interligne de 34px pour une police de 28px */
 $h2-line-height: calc(29 / 24);
 $h3-line-height: calc(24 / 20);
 $h4-line-height: calc(18 / 14);
+$text-line-height: calc(26 / 16);
 
 //******** GLOBAL  ********
 *:focus {

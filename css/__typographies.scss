@@ -47,6 +47,10 @@ a {
   color: #6e8098;
 }
 
+button {
+  color: $white-fixed;
+}
+
 input[type="search"] {
   border: none;
   background-color: transparent;
@@ -72,10 +76,6 @@ input[type="search"] {
     width: 80%;
   }
 
-  @include desktop {
-    width: 100%;
-  }
-
   &::placeholder {
     color: $very-dark-blue;
     opacity: 0.5;
@@ -92,7 +92,6 @@ input[type="search"] {
   }
 
   &[class="location-input"] {
-    width: 80%;
     &::placeholder {
       @include mobile {
         padding-inline-start: 0;
@@ -105,47 +104,5 @@ input[type="search"] {
 
   &:focus {
     outline: none;
-  }
-}
-
-button {
-  color: $white-fixed;
-}
-
-.container {
-  margin-inline: auto;
-  padding-inline: 2.4rem;
-  max-width: 111rem;
-
-  @include tablette {
-    padding-inline: 4rem;
-  }
-
-  @include desktop {
-    padding-inline: 0;
-  }
-}
-
-@include smallmobile {
-  .modal {
-    visibility: hidden; /* modal en dessous du body à mettre en visible */
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 10;
-    }
-
-    &.form {
-      &::after {
-        border-radius: 0.6rem;
-      }
-    }
   }
 }

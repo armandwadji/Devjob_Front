@@ -294,6 +294,10 @@ a {
   color: #6e8098;
 }
 
+button {
+  color: #ffffff;
+}
+
 input[type=search] {
   border: none;
   background-color: transparent;
@@ -320,11 +324,6 @@ input[type=search]:hover::placeholder {
 @media screen and (min-width: 768px) {
   input[type=search] {
     width: 80%;
-  }
-}
-@media screen and (min-width: 1440px) {
-  input[type=search] {
-    width: 100%;
   }
 }
 input[type=search]::-moz-placeholder {
@@ -371,9 +370,6 @@ input[type=search]::placeholder {
     padding: 0;
   }
 }
-input[type=search][class=location-input] {
-  width: 80%;
-}
 @media screen and (min-width: 375px) {
   input[type=search][class=location-input]::-moz-placeholder {
     padding-inline-start: 0;
@@ -400,10 +396,6 @@ input[type=search][class=location-input] {
 }
 input[type=search]:focus {
   outline: none;
-}
-
-button {
-  color: #ffffff;
 }
 
 .container {
@@ -660,10 +652,6 @@ button {
     -webkit-margin-end: 1.6rem;
             margin-inline-end: 1.6rem;
   }
-}
-.form-modal .location-input {
-  border: none;
-  background: transparent;
 }
 .form-modal .fulltime {
   display: grid;
@@ -1220,7 +1208,6 @@ button {
   width: 5rem;
   height: 5rem;
 }
-
 .spinner div {
   width: 100%;
   height: 100%;
@@ -1229,31 +1216,26 @@ button {
   -webkit-animation: spinner-4t3wzl 1.25s infinite backwards;
           animation: spinner-4t3wzl 1.25s infinite backwards;
 }
-
 .spinner div:nth-child(1) {
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   background-color: rgba(89, 100, 224, 0.9);
 }
-
 .spinner div:nth-child(2) {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
   background-color: rgba(89, 100, 224, 0.8);
 }
-
 .spinner div:nth-child(3) {
   -webkit-animation-delay: 0.45s;
           animation-delay: 0.45s;
   background-color: rgba(89, 100, 224, 0.7);
 }
-
 .spinner div:nth-child(4) {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
   background-color: rgba(89, 100, 224, 0.6);
 }
-
 .spinner div:nth-child(5) {
   -webkit-animation-delay: 0.75s;
           animation-delay: 0.75s;
