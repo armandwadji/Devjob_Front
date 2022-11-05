@@ -1,7 +1,14 @@
+// CONSTANTES DES URLS POUR LES CARDS ET LE DETAIL DE CHAQUE CARDS
 const URLCARDS = "https://ecf-dwwm.cefim-formation.org/api/jobs";
 const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job";
 
-// &location=United&fulltime=1&limit=12
+/* POUR LA RECHERCHE NOUS FERONS DE LA MANIERE SUIVANTE :
+      ${URLCARDS}/search?text=${company}&location=${location}&fulltime=${fulltime}&limit=12
+
+      - Company : Nom de la société.
+      - Location : pays où se trouve la société
+      - Fulltime : booleen (0/1) pour savoir si le job est à plein temps ou pas ?
+*/
 
 //******* Méthode pour sélectionner plus facilemet la classe *******
 const getElement = (selection) => {
@@ -27,9 +34,10 @@ const timestampPost = (date) => {
   const datePost = date;
   const today = new Date().getTime();
 
-  // On cacule la difference etre le post et date actuel
-  const t = today - datePost;
+  // On calcule la difference entre le post et date actuel
+  const timeDifference = today - datePost;
 
+  // CONSTANTES DES TEMPS
   const SECONDE = 1000;
   const MINUTE = 60 * SECONDE;
   const HOUR = 60 * MINUTE;
@@ -38,19 +46,19 @@ const timestampPost = (date) => {
   const MONTH = 30 * DAY;
   const YEAR = 12 * MONTH;
 
-  //On calcule les années
-  let year = Math.floor(t / YEAR);
-  let reste = t % YEAR;
+  //On calcule le nombres d'années
+  let year = Math.floor(timeDifference / YEAR);
+  let reste = timeDifference % YEAR;
 
-  //On calcule les mois
+  //On calcule nombres de mois
   let months = Math.floor(reste / MONTH);
   reste = reste % MONTH;
 
-  //On calcule les semains
+  //On calcule le nombres de semaines
   let weeks = Math.floor(reste / WEEK);
   reste = reste % WEEK;
 
-  //on calcule le nombre de jour
+  //on calcule le nombres de jours
   let day = Math.floor(reste / DAY);
   reste = reste % DAY;
 
@@ -68,16 +76,15 @@ const timestampPost = (date) => {
   //on calcule les millisecondes qu'il nous reste
   reste = reste % 1000;
 
-  //On stocke le temp converti dans un tableau d'objets (utile pour l'ordre d'itération)
-
+  //On stocke le temps converti dans un tableau d'objets (utile pour l'ordre d'itération)
   const times = [
     { y: year },
     { mo: months },
     { w: weeks },
     { d: day },
     { h: hour },
-    { minute: minutes },
-    { seconde: secondes },
+    { min: minutes },
+    { s: secondes },
   ];
 
   //On initialise la valeur retourné
@@ -90,6 +97,7 @@ const timestampPost = (date) => {
         break;
       }
     }
+
     if (returnValue !== 0) {
       break;
     }
