@@ -230,17 +230,9 @@
       &-icon {
         margin-inline-end: 1.6rem;
 
-        // @include mobile {
-        //   margin-inline-end: 0;
-        // }
         @include tablette {
           margin-inline-end: 1.6rem;
         }
-      }
-
-      &-input {
-        border: none;
-        background: transparent;
       }
     }
 
@@ -447,7 +439,6 @@
       width: 5rem;
       bottom: calc(100% - 5rem / 2);
       right: calc(100% - 5rem - 3.2rem);
-      // background-color: #e99210;
       border-radius: 1.5rem;
       display: flex;
       place-content: center;

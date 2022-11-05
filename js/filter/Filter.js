@@ -9,7 +9,7 @@ import {
 } from "../utils.js";
 
 // VARIABLES GLOBAL
-let checked = 0;
+let fullTime = 0;
 let company = "";
 let location = "";
 
@@ -20,13 +20,13 @@ const locationFilter = getElement(".location-input");
 const submitBtn = getElement(".fulltime-btn");
 const cards = getElement(".cards");
 
-// MODAL
+// MODAL : NECCESSARE LORS DE VALIDATION DU FORMULAIRE
 const form = getElement(".homeForm");
 const modal = getElement(".modal");
 
-// ******** EVENEMENTS LISTENERS *************
+// ******** EVENTS LISTENERS *************
 checkboxFilter.addEventListener("click", (e) => {
-  checked = e.target.checked ? 1 : 0;
+  fullTime = e.target.checked ? 1 : 0;
 });
 
 titleFilter.addEventListener("input", (e) => {
@@ -51,8 +51,8 @@ submitBtn.addEventListener("click", async (e) => {
 
   showLoading(); //loader visible
 
-  if (checked || company || location) {
-    urlSearch = `${URLCARDS}/search?text=${company}&fulltime=${checked}&location=${location}`;
+  if (fullTime || company || location) {
+    urlSearch = `${URLCARDS}/search?text=${company}&fulltime=${fullTime}&location=${location}`;
     const cards = await fetchData(urlSearch);
     jobs = cards.jobs;
   } else {

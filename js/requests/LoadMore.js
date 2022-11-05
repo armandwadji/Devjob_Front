@@ -15,11 +15,11 @@ loadMoreBtn.addEventListener("click", async () => {
 
   let jobs = getStorageItem("jobs"); // Liste des jobs stockés dans le localStorage
 
-  let index = jobs.length; // Index nécéssaire pour la pagination
+  let offset = jobs.length; // Index nécéssaire pour la pagination
 
   showprogress(); // Progress loader visible
 
-  const newCards = await fetchData(`${urlPaginaton}?limit=3&offset=${index}`);
+  const newCards = await fetchData(`${urlPaginaton}?limit=3&offset=${offset}`);
 
   const { jobs: newJobs, total } = newCards;
 
@@ -30,7 +30,7 @@ loadMoreBtn.addEventListener("click", async () => {
     loadMoreDisabled(); //Méthode qui disabled le button load more
   }
 
-  displayCards(jobs);
+  displayCards(jobs); //On actualise l'affichage des cards
 
   hiddeprogress(); // Progress loader hidden
 });

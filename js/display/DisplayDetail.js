@@ -1,7 +1,7 @@
 import { hiddeLoading } from "../animations/ToggleLoading.js";
 import { getElement, timestampPost } from "../utils.js";
 
-// On pointe vers les éléments nécéssaires:
+// On pointe vers les éléments html nécéssaires:
 const companyDetail = getElement(".company");
 const mainDetail = getElement(".main-detail");
 const footerDetail = getElement(".footer-detail");
@@ -20,7 +20,7 @@ const displayDetail = ({
   role,
   website,
 }) => {
-  // On destructure le content et les items de requirements et roles en les renommant pour les différenciés
+  // On destructure le content et les items de requirements et roles en les renommants pour les différenciés
   const { content: contentRequirement, items: itemsRequirement } = requirements;
   const { content: contentRole, items: itemsRole } = role;
 
