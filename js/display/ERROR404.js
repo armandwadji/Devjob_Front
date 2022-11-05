@@ -1,6 +1,6 @@
 const error404 = () => {
   const error = `
-    <?xml version="1.0" encoding="utf-8"?>
+                <?xml version="1.0" encoding="utf-8"?>
                 <svg
                     version="1.1"
                     id="error-404-img"
