@@ -1335,7 +1335,7 @@ input[type=search]:focus {
 }
 
 #error-404-img {
-  max-width: 100rem;
+  max-width: 70rem;
   display: block;
   margin: 0 auto;
 }
@@ -1505,8 +1505,7 @@ input[type=search]:focus {
 }
 
 .error404-message {
-  -webkit-margin-before: 10rem;
-          margin-block-start: 10rem;
+  margin-block: 10rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem var(--dark-gray-opacity);
 }/*# sourceMappingURL=style.css.map */

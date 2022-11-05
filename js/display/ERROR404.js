@@ -153,7 +153,7 @@ const error404 = () => {
                         />
                     </g>
                 </svg>
-                <h1 class="error404-message" id="_x34_-droite">your request is fail, try again...</h1>
+                <h1 class="error404-message" id="_x34_-gauche">your request is fail,  <span id="_x34_-droite">try again...</span> </h1>
                 `;
 
   return error;
