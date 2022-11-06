@@ -200,6 +200,10 @@
           fill: $violet;
         }
       }
+
+      @include desktop {
+        padding-inline-start: 3.2rem;
+      }
     }
   }
 
