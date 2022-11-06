@@ -254,16 +254,12 @@
           cursor: pointer;
           margin-inline-start: 0;
           margin-inline-end: 1.6rem;
+          appearance: none; // Apparance checkbox
 
           &:hover::before {
             background-color: $violet;
             opacity: 0.25;
           }
-
-          // Apparance checkbox
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
 
           &:before {
             content: "";
