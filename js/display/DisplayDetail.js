@@ -25,7 +25,7 @@ const displayDetail = ({
   const { content: contentRole, items: itemsRole } = role;
 
   // UNORDERED LIST UL ITEMS OF REQUIREMENT
-  const ul = itemsRequirement
+  const unOrderList = itemsRequirement
     .map((item) => {
       return `
               <li>
@@ -37,7 +37,7 @@ const displayDetail = ({
     .join("");
 
   // ORDER LIST OL ITEMS OF REQUIREMENT
-  const ol = itemsRole
+  const orderList = itemsRole
     .map((item, index) => {
       return `
               <li>
@@ -89,7 +89,7 @@ const displayDetail = ({
                                       ${contentRequirement}
                                     </p>
                                     <ul class="informations-list">
-                                      ${ul}
+                                      ${unOrderList}
                                     </ul>
                                 </div>
                               </section>
@@ -102,7 +102,7 @@ const displayDetail = ({
                                       ${contentRole}
                                     </p>
                                     <ol class="informations-list numberList">
-                                      ${ol}
+                                      ${orderList}
                                     </ol>
                                 </div>
                               </section>
