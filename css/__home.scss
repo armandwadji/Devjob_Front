@@ -186,6 +186,7 @@
       border: none;
       border-radius: 0.5rem;
       padding: 1.4rem;
+      margin-inline-end: 1rem;
 
       svg {
         fill: $white-fixed;
@@ -502,13 +503,16 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  width: 100vw;
   background-color: $light-gray;
   &-img {
+    height: 20rem;
     margin-inline: auto;
     margin-block-end: 5rem;
   }
 
   &-message {
     text-align: center;
+    margin-block-end: 3rem;
   }
 }

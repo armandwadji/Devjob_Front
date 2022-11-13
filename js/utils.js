@@ -1,3 +1,6 @@
+import { showLoading } from "./animations/ToggleLoading.js";
+import fetchData from "./requests/FetchData.js";
+
 // CONSTANTES DES URLS POUR LES CARDS ET LE DETAIL DE CHAQUE CARDS
 const URLCARDS = "https://ecf-dwwm.cefim-formation.org/api/jobs";
 const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job";
@@ -133,6 +136,30 @@ const loadMoreEnabled = () => {
 
 // --------------------------------------------------------
 
+// *********************** METHODE DE RENDRE DES RECHERCHES DE JOBS DE L'UTILISATEUR  ************************
+const showJobsSearch = async (fullTime = 0, company = "", location = "") => {
+  showLoading(); // loader visible
+
+  let urlSearch = null;
+  let jobs = [];
+
+  if (fullTime || company || location) {
+    urlSearch = `${URLCARDS}/search?text=${company}&fulltime=${fullTime}&location=${location}`;
+    const cards = await fetchData(urlSearch);
+    jobs = cards.jobs;
+  } else {
+    urlSearch = URLCARDS;
+    const cards = await fetchData(urlSearch);
+    jobs = cards.jobs;
+  }
+
+  // On actualise l'url et la liste des jobs en localStorage pour la pagination
+  setStorageItem("url", urlSearch);
+  setStorageItem("jobs", jobs);
+
+  return jobs;
+};
+
 export {
   URLCARDS,
   URLCARD,
@@ -143,4 +170,5 @@ export {
   idrecuparation,
   loadMoreDisabled,
   loadMoreEnabled,
+  showJobsSearch,
 };

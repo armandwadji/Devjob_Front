@@ -59,6 +59,7 @@ input[type="search"] {
   text-overflow: ellipsis;
   color: $very-dark-blue;
   caret-color: $violet;
+  margin-inline-start: 1rem;
 
   &:hover {
     &::placeholder {
@@ -73,6 +74,7 @@ input[type="search"] {
   }
 
   @include tablette {
+    margin-inline-start: 0;
     width: 80%;
   }
 
@@ -80,12 +82,10 @@ input[type="search"] {
     color: $very-dark-blue;
     opacity: 0.5;
     transition: 0.2s ease-in-out;
-    padding-inline-start: 2rem;
     width: 80%;
-
-    @include xtrasmallmobile {
-      padding-inline-start: 1rem;
-    }
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include tablette {
       padding: 0;
@@ -95,10 +95,10 @@ input[type="search"] {
   &[class="location-input"] {
     &::placeholder {
       @include mobile {
-        padding-inline-start: 0;
+        // padding-inline-start: 0;
       }
       @include xtrasmallmobile {
-        padding-inline-start: 0;
+        // padding-inline-start: 0;
       }
     }
   }

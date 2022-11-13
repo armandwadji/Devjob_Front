@@ -1,12 +1,6 @@
-import { hiddeLoading, showLoading } from "../animations/ToggleLoading.js";
+import { hiddeLoading } from "../animations/ToggleLoading.js";
 import displayCards from "../display/DisplayCards.js";
-import fetchData from "../requests/FetchData.js";
-import {
-  getElement,
-  loadMoreEnabled,
-  setStorageItem,
-  URLCARDS,
-} from "../utils.js";
+import { getElement, loadMoreEnabled, showJobsSearch } from "../utils.js";
 
 // VARIABLES GLOBAL
 let fullTime = 0;
@@ -18,9 +12,10 @@ const checkboxFilter = getElement(".fulltime__container--checkbox");
 const titleFilter = getElement(".title-input");
 const locationFilter = getElement(".location-input");
 const submitBtn = getElement(".fulltime-btn");
+const searchBtn = getElement(".form-icons__search");
 const cards = getElement(".cards");
 
-// MODAL : NECCESSARE LORS DE VALIDATION DU FORMULAIRE
+// MODAL : NECCESSAIRE LORS DE VALIDATION DU FORMULAIRE
 const form = getElement(".homeForm");
 const modal = getElement(".modal");
 
@@ -38,6 +33,7 @@ locationFilter.addEventListener("input", (e) => {
 });
 // *******************************************
 
+// Evenement onClick du boutton Submit
 submitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   cards.innerHTML = ""; //Pour évité que le loader ne se centre en dessous du viewport
@@ -46,26 +42,18 @@ submitBtn.addEventListener("click", async (e) => {
   modal.style.visibility = "hidden";
   form.classList.toggle("modal");
 
-  let urlSearch = null;
-  let jobs = [];
+  const jobsSubmit = await showJobsSearch(fullTime, company, location);
+  displayCards(jobsSubmit);
 
-  showLoading(); //loader visible
+  loadMoreEnabled(); //On remet le button load more en mode actif
 
-  if (fullTime || company || location) {
-    urlSearch = `${URLCARDS}/search?text=${company}&fulltime=${fullTime}&location=${location}`;
-    const cards = await fetchData(urlSearch);
-    jobs = cards.jobs;
-  } else {
-    urlSearch = URLCARDS;
-    const cards = await fetchData(urlSearch);
-    jobs = cards.jobs;
-  }
+  hiddeLoading(); //loader hidden
+});
 
-  displayCards(jobs);
-
-  // On actualise l'url et la liste des jobs en localStorage
-  setStorageItem("url", urlSearch);
-  setStorageItem("jobs", jobs);
+// Evenement onClick du boutton Search
+searchBtn.addEventListener("click", async () => {
+  const jobsSearch = await showJobsSearch(fullTime, company);
+  displayCards(jobsSearch);
 
   loadMoreEnabled(); //On remet le button load more en mode actif
 
