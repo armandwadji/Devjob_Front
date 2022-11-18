@@ -2,24 +2,28 @@
 :root {
   // PRIMARY
   --violet: #5964e0;
-  --violet-white: #5964e0;
   --light-violet: #939bf4;
-  --violetOpacity: rgba(89, 100, 224, 0.1);
   --very-dark-blue: #19202d;
   --midnight: #121721;
 
+  // COLORS OF CONTEXT
+  --violet-white: #5964e0;
+  --violetOpacity: rgba(89, 100, 224, 0.1);
+  --violetOpacityHover: rgba(89, 100, 224, 0.3);
+
   // SECONDARY
   --white: #ffffff;
-  --whiteOpacity: rgba(255, 255, 255, 0.1);
   --light-gray: #f2f2f2;
   --gray: #9daec2;
   --dark-gray: #6e8098;
+
+  // COLORS OF CONTEXT
+  --whiteOpacity: rgba(255, 255, 255, 0.1);
   --dark-gray-txt: #6e8098;
   --dark-gray-opacity: rgba(110, 128, 152, 0.2);
 }
 
 $violet: var(--violet);
-$violet-white: var(--violet-white);
 $light-violet: var(--light-violet);
 $very-dark-blue: var(--very-dark-blue);
 $midnight: var(--midnight);
@@ -29,15 +33,29 @@ $light-gray: var(--light-gray);
 $gray: var(--gray);
 $dark-gray: var(--dark-gray);
 
+// ******** COLORS CONTEXT ********
+$violet-white: var(--violet-white);
 $dark-gray-opacity: var(--dark-gray-opacity);
 $violetOpacity: var(--violetOpacity);
+$violetOpacityHover: var(--violetOpacityHover);
 
-// ******** COLORS CONTEXT ********
+// ******** TYPOGRAPHIE CUSTOMER ********
 $background: var(--light-gray);
 $text: var(--dark-gray-txt);
 $titles: var(--very-dark-blue);
 
-//******** INTERLIGNE ********
+.darken {
+  --white: #19202d;
+  --very-dark-blue: #ffffff;
+  --light-gray: #121721;
+  --violetOpacity: rgba(255, 255, 255, 0.1);
+  --violetOpacityHover: rgba(255, 255, 255, 0.3);
+  --violet-white: #ffffff;
+  --dark-gray: #ffffff;
+  --dark-gray-txt: #9daec2;
+}
+
+//******** INTERLIGNES CALCULS ********
 $h1-line-height: calc(34 / 28); /* Interligne de 34px pour une police de 28px */
 $h2-line-height: calc(29 / 24);
 $h3-line-height: calc(24 / 20);
@@ -48,14 +66,4 @@ $text-line-height: calc(26 / 16);
 *:focus {
   outline: 0.2rem solid $violet-white;
   outline-offset: 1rem;
-}
-
-.darken {
-  --white: #19202d;
-  --very-dark-blue: #ffffff;
-  --light-gray: #121721;
-  --violetOpacity: rgba(255, 255, 255, 0.1);
-  --violet-white: #ffffff;
-  --dark-gray: #ffffff;
-  --dark-gray-txt: #9daec2;
 }

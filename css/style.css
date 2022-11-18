@@ -215,24 +215,19 @@ address {
 }
 :root {
   --violet: #5964e0;
-  --violet-white: #5964e0;
   --light-violet: #939bf4;
-  --violetOpacity: rgba(89, 100, 224, 0.1);
   --very-dark-blue: #19202d;
   --midnight: #121721;
+  --violet-white: #5964e0;
+  --violetOpacity: rgba(89, 100, 224, 0.1);
+  --violetOpacityHover: rgba(89, 100, 224, 0.3);
   --white: #ffffff;
-  --whiteOpacity: rgba(255, 255, 255, 0.1);
   --light-gray: #f2f2f2;
   --gray: #9daec2;
   --dark-gray: #6e8098;
+  --whiteOpacity: rgba(255, 255, 255, 0.1);
   --dark-gray-txt: #6e8098;
   --dark-gray-opacity: rgba(110, 128, 152, 0.2);
-}
-
-/* Interligne de 34px pour une police de 28px */
-*:focus {
-  outline: 0.2rem solid var(--violet-white);
-  outline-offset: 1rem;
 }
 
 .darken {
@@ -240,9 +235,16 @@ address {
   --very-dark-blue: #ffffff;
   --light-gray: #121721;
   --violetOpacity: rgba(255, 255, 255, 0.1);
+  --violetOpacityHover: rgba(255, 255, 255, 0.3);
   --violet-white: #ffffff;
   --dark-gray: #ffffff;
   --dark-gray-txt: #9daec2;
+}
+
+/* Interligne de 34px pour une police de 28px */
+*:focus {
+  outline: 0.2rem solid var(--violet-white);
+  outline-offset: 1rem;
 }
 
 body {
@@ -466,6 +468,9 @@ input[type=search]:focus {
   transition: 0.2s ease-in-out;
 }
 .nav-darkMode:hover span::before {
+  background-color: var(--light-violet);
+}
+.nav-darkMode:hover span::after {
   background-color: var(--light-violet);
 }
 .nav-darkMode span {
@@ -996,7 +1001,7 @@ input[type=search]:focus {
   transition: 0.2s ease-in-out;
 }
 .company-btn:hover {
-  opacity: 0.8;
+  background-color: var(--violetOpacityHover);
 }
 
 .detailContainer {
@@ -1067,6 +1072,10 @@ input[type=search]:focus {
   border-radius: 0.5rem;
   text-transform: capitalize;
   text-align: center;
+  transition: 0.3s ease-in-out;
+}
+.mainHeader-btn:hover {
+  background-color: var(--light-violet);
 }
 
 .description {
@@ -1169,11 +1178,15 @@ input[type=search]:focus {
   color: #ffffff;
   text-transform: capitalize;
   text-align: center;
+  transition: 0.3s ease-in-out;
 }
 @media screen and (min-width: 768px) {
   .footer-btn {
     margin: 0;
   }
+}
+.footer-btn:hover {
+  background-color: var(--light-violet);
 }
 
 .loader {
