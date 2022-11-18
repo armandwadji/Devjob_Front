@@ -3,6 +3,7 @@ import "./js/animations/DarkMode.js";
 import "./js/animations/Modal.js";
 import "./js/filter/Filter.js";
 import "./js/requests/LoadMore.js";
+import "./js/animations/ScrollToTop.js";
 
 // specific imports
 import fetchData from "./js/requests/FetchData.js";

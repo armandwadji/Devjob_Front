@@ -1496,4 +1496,37 @@ input[type=search]:focus {
   margin-block: 10rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem var(--dark-gray-opacity);
+}
+
+.scrollToTop {
+  display: inline-block;
+  background-color: var(--violet);
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  border-radius: 0.4rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.scrollToTop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 5rem;
+  color: var(--white);
+}
+.scrollToTop:hover {
+  cursor: pointer;
+  background-color: var(--very-dark-blue);
+}
+.scrollToTop.show {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */
