@@ -8,7 +8,9 @@ import {
 } from "../utils.js";
 import fetchData from "./FetchData.js";
 
+// On pointe vers les éléments nécessaires
 const loadMoreBtn = getElement(".load-more");
+const cards = getElement(".cards");
 
 loadMoreBtn.addEventListener("click", async () => {
   const urlPaginaton = getStorageItem("url"); //url pour la pagination
@@ -30,7 +32,7 @@ loadMoreBtn.addEventListener("click", async () => {
     loadMoreDisabled(); //Méthode qui disabled le button load more
   }
 
+  cards.innerHTML = ""; //Réiniitialisation de la liste des cards
   displayCards(jobs); //On actualise l'affichage des cards
-
   hiddeprogress(); // Progress loader hidden
 });

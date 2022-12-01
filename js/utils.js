@@ -13,7 +13,7 @@ const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job";
       - Fulltime : booleen (0/1) pour savoir si le job est à plein temps ou pas ?
 */
 
-//******* Méthode pour sélectionner plus facilemet la classe *******
+//******* Méthode pour sélectionner plus facilemet les éléments *******
 const getElement = (selection) => {
   const element = document.querySelector(selection);
   if (element) return element;
