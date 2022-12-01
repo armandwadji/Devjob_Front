@@ -74,7 +74,7 @@ const displayCards = (jobs) => {
       }
     );
   } else {
-    // Empty Search List
+    // Empty Search
     const emptySearch = document.createElement("li");
     emptySearch.classList.add("emptySearch");
 
@@ -93,6 +93,8 @@ const displayCards = (jobs) => {
 
     cards.appendChild(emptySearch);
   }
+
+  // Remove Loader
   hiddeLoading();
 };
 

@@ -43,7 +43,7 @@ const displayDetail = ({
   const { content: contentRequirement, items: itemsRequirement } = requirements;
   const { content: contentRole, items: itemsRole } = role;
 
-  // COMPANY SITE
+  // Company Header
   companyLogo.style = `background-color: ${logoBackground}`;
   companyImg.src = `https://ecf-dwwm.cefim-formation.org${logo}`;
   companyImg.alt = `${company}-logo`;
@@ -101,9 +101,10 @@ const displayDetail = ({
     RolesList.appendChild(list);
   });
 
-  // POSITION SITE
+  // Position Company
   companyPosition.textContent = position;
 
+  // Remove Loader
   hiddeLoading();
 };
 
