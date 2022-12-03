@@ -71,7 +71,6 @@ const displayDetail = ({
   RolesDef.textContent = contentRole;
 
   // Requirement List
-  RequirementsList.innerHTML = "";
   itemsRequirement.map((item) => {
     const list = document.createElement("li");
     const span = document.createElement("span");
@@ -86,7 +85,6 @@ const displayDetail = ({
   });
 
   // Roles List
-  RolesList.innerHTML = "";
   itemsRole.map((item, index) => {
     const list = document.createElement("li");
     const span = document.createElement("span");

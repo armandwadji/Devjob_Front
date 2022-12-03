@@ -28,11 +28,10 @@ loadMoreBtn.addEventListener("click", async () => {
   if (jobs.length < total) {
     jobs = [...jobs, ...newJobs];
     setStorageItem("jobs", jobs);
+    displayCards(newJobs); //On actualise l'affichage des cards
   } else {
     loadMoreDisabled(); //Méthode qui disabled le button load more
   }
 
-  cards.innerHTML = ""; //Réiniitialisation de la liste des cards
-  displayCards(jobs); //On actualise l'affichage des cards
   hiddeprogress(); // Progress loader hidden
 });
