@@ -22,9 +22,6 @@
     <!-- modal + form Modal en js -->
     <div class="modal"></div>
 
-    <!-- Scrool to top button -->
-    <a type="button" class="scrollToTop"></a>
-
     <!-- LOADER -->
     <div class="loader show-loader">
       <div class="spinner">
@@ -55,12 +52,12 @@
       </nav>
 
       <!-- FORM -->
-      <!-- modal à rajouter ici -->
+      <!-- modal add here -->
       <form action="" class="form homeForm">
         <!-- filter by title -->
         <div class="form-title">
           <div class="form-icons">
-            <!-- onClick open modal qui passe en visibility: visible -->
+            <!-- onClick open modal which goes into visibility: visible -->
             <button type="button" class="form-icons__filter icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +91,7 @@
           />
         </div>
 
-        <!--Modal form  -->
+        <!--MODAL FORM  -->
         <div class="form-modal">
           <div class="location">
             <img
@@ -131,9 +128,10 @@
     <main class="main container">
       <!-- LES CARDS -->
       <ul class="cards">
-        <!-- ******** CARDS ******** -->
-        <!-- <li class="card">
-            <a href="#" id="" target="_blank">
+        <!--  CARDS TEMPLATE START  -->
+        <template id="card-template">
+          <li class="card">
+            <a href="#" id="">
               <div class="card__logo">
                 <img class="card__img" src="assets/scoot.svg" alt="scoot" />
               </div>
@@ -142,18 +140,20 @@
               <p class="card__company">scoot</p>
               <h3 class="card__location">location</h3>
             </a>
-          </li> -->
+          </li>
+        </template>
 
-        <!-- ******** EMPTY SEARCH ******** -->
-        <!-- <li class="emptySearch">
-          <img
-            class="emptySearch-img"
-            src="../../assets/icon-search.svg"
-            alt="empty serch logo"
-          />
-          //
-          <h3 class="emptySearch-message">no ads available</h3>
-        </li> -->
+        <!--  EMPTY SEARCH TEMPLATE START  -->
+        <template id="emptySearch-template">
+          <li class="emptySearch">
+            <img
+              class="emptySearch-img"
+              src="../../assets/icon-search.svg"
+              alt="empty serch logo"
+            />
+            <h3 class="emptySearch-message">no ads available</h3>
+          </li>
+        </template>
       </ul>
     </main>
 
@@ -166,6 +166,9 @@
     <footer class="footer container">
       <button type="button" class="load-more">load more</button>
     </footer>
+
+    <!-- SCROOL TO TOP BUTTON -->
+    <a type="button" class="scrollToTop"></a>
 
     <!-- Script -->
     <script type="module" src="index.js"></script>

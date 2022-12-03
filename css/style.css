@@ -1506,11 +1506,61 @@ input[type=search]:focus {
 }
 
 .error404-message {
-  margin-block: 10rem;
+  -webkit-margin-before: 10rem;
+          margin-block-start: 10rem;
+  -webkit-margin-after: 5rem;
+          margin-block-end: 5rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem var(--dark-gray-opacity);
 }
 
+:is(h1, h3, a) {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  height: 100vh;
+}
+
+.error-reload {
+  color: var(--violet) !important;
+}
+
+.bubble-message {
+  text-align: center;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 300px;
+  background: var(--violet);
+  opacity: 0;
+  -webkit-animation: anim 8s forwards;
+          animation: anim 8s forwards;
+  filter: hue-rotate(0deg);
+  cursor: crosshair;
+}
+
+@-webkit-keyframes anim {
+  to {
+    top: -250px;
+    opacity: 1;
+    filter: hue-rotate(720deg);
+    left: var(--left);
+  }
+}
+
+@keyframes anim {
+  to {
+    top: -250px;
+    opacity: 1;
+    filter: hue-rotate(720deg);
+    left: var(--left);
+  }
+}
 .scrollToTop {
   display: inline-block;
   background-color: var(--violet);

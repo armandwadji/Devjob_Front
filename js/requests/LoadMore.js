@@ -10,7 +10,6 @@ import fetchData from "./FetchData.js";
 
 // On pointe vers les éléments nécessaires
 const loadMoreBtn = getElement(".load-more");
-const cards = getElement(".cards");
 
 loadMoreBtn.addEventListener("click", async () => {
   const urlPaginaton = getStorageItem("url"); //url pour la pagination

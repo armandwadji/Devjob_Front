@@ -71,7 +71,7 @@ const displayDetail = ({
   RolesDef.textContent = contentRole;
 
   // Requirement List
-  itemsRequirement.map((item) => {
+  itemsRequirement.forEach((item) => {
     const list = document.createElement("li");
     const span = document.createElement("span");
     const p = document.createElement("p");
@@ -85,7 +85,7 @@ const displayDetail = ({
   });
 
   // Roles List
-  itemsRole.map((item, index) => {
+  itemsRole.forEach((item, index) => {
     const list = document.createElement("li");
     const span = document.createElement("span");
     const p = document.createElement("p");

@@ -251,8 +251,49 @@
   animation-name: bounceInUp;
 }
 
+// MESSAGES ERROR 404
 .error404-message {
-  margin-block: 10rem;
+  margin-block-start: 10rem;
+  margin-block-end: 5rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem $dark-gray-opacity;
+}
+
+:is(h1, h3, a) {
+  user-select: none;
+}
+
+body {
+  height: 100vh;
+}
+
+.error-reload {
+  color: $violet !important;
+}
+
+.bubble-message {
+  text-align: center;
+  // font-size: 6rem;
+}
+
+// Bubble Game
+.bubble {
+  position: absolute;
+  border-radius: 300px;
+  background: $violet;
+  opacity: 0;
+  animation: anim 8s forwards;
+  filter: hue-rotate(0deg);
+  cursor: crosshair;
+}
+
+@keyframes anim {
+  to {
+    top: -250px;
+    opacity: 1;
+    filter: hue-rotate(720deg);
+    left: var(--left);
+  }
+  from {
+  }
 }

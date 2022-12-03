@@ -1,8 +1,14 @@
 import { hiddeLoading } from "../animations/ToggleLoading.js";
 import { getElement, timestampPost } from "../utils.js";
 
-// On Pointe vers les éléments nécessaires
-const cards = getElement(".cards");
+// On Pointe vers la liste des cards
+const Cards = getElement(".cards");
+
+//Récupèration du template d'une card
+const cardTemplate = getElement("#card-template");
+
+// Récupèration du template d'une card empty
+const cardIsEmptyTemplate = getElement("#emptySearch-template");
 
 const displayCards = (jobs) => {
   if (jobs.length > 0) {
@@ -19,84 +25,60 @@ const displayCards = (jobs) => {
           position,
           postedAt,
         }) => {
-          // Card
-          const card = document.createElement("li");
-          card.classList.add("card");
+          // Clone Template
+          const cloneTemplate = document.importNode(cardTemplate.content, true);
 
-          // CardLink
-          const cardLink = document.createElement("a");
-          cardLink.id = id;
-          cardLink.href = `detail.html?id=${id}`;
+          // Select Card
+          const Card = cloneTemplate.querySelector(".card");
 
-          // CardLogo
-          const cardLogo = document.createElement("div");
-          cardLogo.classList.add("card__logo");
-          cardLogo.style = `background-color: ${logoBackground}`;
+          // Link
+          Card.querySelector("a").id = id;
+          Card.querySelector("a").href = `detail.html?id=${id}`;
 
-          // ImageLogo
-          const cardImg = document.createElement("img");
-          cardImg.classList.add("card__img");
-          cardImg.src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+          // Background Color Logo
+          Card.querySelector(
+            ".card__logo"
+          ).style = `background-color: ${logoBackground}`;
 
-          cardImg.alt = `${company}-logo`;
-          cardLogo.appendChild(cardImg);
+          // Logo
+          Card.querySelector(
+            ".card__img"
+          ).src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+          Card.querySelector(".card__img").alt = `${company}-logo`;
 
           // PostAt
-          const cardPostAt = document.createElement("p");
-          cardPostAt.classList.add("card__postAt");
-          cardPostAt.textContent = `${timestampPost(postedAt)} ago .`;
+          Card.querySelector(".card__postAt").textContent = `${timestampPost(
+            postedAt
+          )} ago. `;
 
           // Contract
-          const cardContract = document.createElement("span");
-          cardContract.textContent = contract;
-          cardPostAt.appendChild(cardContract);
+          const CardContract = document.createElement("span");
+          CardContract.textContent = contract;
+          Card.querySelector(".card__postAt").appendChild(CardContract);
 
           // Position
-          const cardPosition = document.createElement("h2");
-          cardPosition.classList.add("card__position");
-          cardPosition.textContent = position;
+          Card.querySelector(".card__position").textContent = position;
 
           // Company
-          const cardCompany = document.createElement("p");
-          cardCompany.classList.add("card__company");
-          cardCompany.textContent = company;
+          Card.querySelector(".card__company").textContent = company;
 
           // Location
-          const cardLocation = document.createElement("h3");
-          cardLocation.classList.add("card__location");
-          cardLocation.textContent = location;
+          Card.querySelector(".card__location").textContent = location;
 
-          cardLink.append(
-            cardLogo,
-            cardPostAt,
-            cardPosition,
-            cardCompany,
-            cardLocation
-          );
-
-          card.appendChild(cardLink); //
-          cards.appendChild(card);
+          // Add Card in Cards List
+          Cards.appendChild(Card);
         }
       );
   } else {
-    // Empty Search
-    const emptySearch = document.createElement("li");
-    emptySearch.className = "emptySearch";
+    const cloneTemplate = document.importNode(
+      cardIsEmptyTemplate.content,
+      true
+    );
 
-    // Empty Search Img
-    const emptySearchImg = document.createElement("img");
-    emptySearchImg.className = "emptySearch-img";
-    emptySearchImg.src = "../../assets/icon-search.svg";
-    emptySearchImg.alt = "empty serch logo";
+    const EmptySearch = cloneTemplate.querySelector(".emptySearch");
 
-    // Empty Search Message
-    const emptySearchMessage = document.createElement("h3");
-    emptySearchMessage.className = "emptySearch-message";
-    emptySearchMessage.textContent = `no ads available`;
-
-    // Family Ties
-    emptySearch.append(emptySearchImg, emptySearchMessage); //
-    cards.appendChild(emptySearch);
+    Cards.appendChild(EmptySearch);
+    console.log(EmptySearch);
   }
 
   // Remove Loader
