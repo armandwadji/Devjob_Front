@@ -253,8 +253,8 @@
 
 // MESSAGES ERROR 404
 .error404-message {
-  margin-block-start: 10rem;
-  margin-block-end: 5rem;
+  margin-block-start: 5rem;
+  margin-block-end: 2rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem $dark-gray-opacity;
 }
@@ -263,8 +263,9 @@
   user-select: none;
 }
 
-body {
+.error404-body {
   height: 100vh;
+  overflow: hidden;
 }
 
 .error-reload {
@@ -273,7 +274,7 @@ body {
 
 .bubble-message {
   text-align: center;
-  // font-size: 6rem;
+  margin-block-end: 6.1rem;
 }
 
 // Bubble Game

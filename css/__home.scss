@@ -482,7 +482,6 @@
 
 // Footer
 .footer {
-  margin-block-end: 6.1rem;
   .load-more {
     display: block;
     margin-inline: auto;
@@ -493,6 +492,11 @@
     padding: 1.2rem 3rem;
     border-radius: 0.5rem;
     transition: 0.2s ease-in-out;
+    margin-block-end: 6.2rem;
+
+    @include desktop {
+      margin-block-end: 10.4rem;
+    }
 
     // Hover
     &:hover {
