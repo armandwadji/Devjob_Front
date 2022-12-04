@@ -859,10 +859,6 @@ input[type=search]:focus {
           margin-block-end: 3.6rem;
 }
 
-.footer {
-  -webkit-margin-after: 6.1rem;
-          margin-block-end: 6.1rem;
-}
 .footer .load-more {
   display: block;
   margin-inline: auto;
@@ -873,6 +869,14 @@ input[type=search]:focus {
   padding: 1.2rem 3rem;
   border-radius: 0.5rem;
   transition: 0.2s ease-in-out;
+  -webkit-margin-after: 6.2rem;
+          margin-block-end: 6.2rem;
+}
+@media screen and (min-width: 1440px) {
+  .footer .load-more {
+    -webkit-margin-after: 10.4rem;
+            margin-block-end: 10.4rem;
+  }
 }
 .footer .load-more:hover {
   background-color: var(--light-violet);
@@ -1506,11 +1510,64 @@ input[type=search]:focus {
 }
 
 .error404-message {
-  margin-block: 10rem;
+  -webkit-margin-before: 5rem;
+          margin-block-start: 5rem;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem var(--dark-gray-opacity);
 }
 
+:is(h1, h3, a) {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.error404-body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.error-reload {
+  color: var(--violet) !important;
+}
+
+.bubble-message {
+  text-align: center;
+  -webkit-margin-after: 6.1rem;
+          margin-block-end: 6.1rem;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 300px;
+  background: var(--violet);
+  opacity: 0;
+  -webkit-animation: anim 8s forwards;
+          animation: anim 8s forwards;
+  filter: hue-rotate(0deg);
+  cursor: crosshair;
+}
+
+@-webkit-keyframes anim {
+  to {
+    top: -250px;
+    opacity: 1;
+    filter: hue-rotate(720deg);
+    left: var(--left);
+  }
+}
+
+@keyframes anim {
+  to {
+    top: -250px;
+    opacity: 1;
+    filter: hue-rotate(720deg);
+    left: var(--left);
+  }
+}
 .scrollToTop {
   display: inline-block;
   background-color: var(--violet);

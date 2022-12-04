@@ -8,6 +8,7 @@ import {
 } from "../utils.js";
 import fetchData from "./FetchData.js";
 
+// On pointe vers les éléments nécessaires
 const loadMoreBtn = getElement(".load-more");
 
 loadMoreBtn.addEventListener("click", async () => {
@@ -26,11 +27,10 @@ loadMoreBtn.addEventListener("click", async () => {
   if (jobs.length < total) {
     jobs = [...jobs, ...newJobs];
     setStorageItem("jobs", jobs);
+    displayCards(newJobs); //On actualise l'affichage des cards
   } else {
     loadMoreDisabled(); //Méthode qui disabled le button load more
   }
-
-  displayCards(jobs); //On actualise l'affichage des cards
 
   hiddeprogress(); // Progress loader hidden
 });

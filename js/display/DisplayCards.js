@@ -1,15 +1,20 @@
 import { hiddeLoading } from "../animations/ToggleLoading.js";
 import { getElement, timestampPost } from "../utils.js";
 
-const cards = getElement(".cards");
+// On Pointe vers la liste des cards
+const Cards = getElement(".cards");
+
+//Récupèration du template d'une card
+const cardTemplate = getElement("#card-template");
+
+// Récupèration du template d'une card empty
+const cardIsEmptyTemplate = getElement("#emptySearch-template");
 
 const displayCards = (jobs) => {
-  let cardList = [];
-
   if (jobs.length > 0) {
-    cardList = jobs
+    jobs
       .sort((a, b) => b.postedAt - a.postedAt)
-      .map(
+      .forEach(
         ({
           company,
           contract,
@@ -20,33 +25,63 @@ const displayCards = (jobs) => {
           position,
           postedAt,
         }) => {
-          return `
-            <li class="card">
-                <a href="detail.html?id=${id}" id="${id}" >
-                <div class="card__logo" style="background-color: ${logoBackground}">
-                    <img class="card__img" src="https://ecf-dwwm.cefim-formation.org${logo}" alt="${company}-logo" />
-                </div>
-                <p class="card__postAt">${timestampPost(
-                  postedAt
-                )} ago . <span>${contract}</span></p>
-                <h2 class="card__position">${position}</h2>
-                <p class="card__company">${company}</p>
-                <h3 class="card__location">${location}</h3>
-                </a>
-            </li>
-          `;
+          // Clone Template
+          const cloneTemplate = document.importNode(cardTemplate.content, true);
+
+          // Select Card
+          const Card = cloneTemplate.querySelector(".card");
+
+          // Link
+          Card.querySelector("a").id = id;
+          Card.querySelector("a").href = `detail.html?id=${id}`;
+
+          // Background Color Logo
+          Card.querySelector(
+            ".card__logo"
+          ).style = `background-color: ${logoBackground}`;
+
+          // Logo
+          Card.querySelector(
+            ".card__img"
+          ).src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+          Card.querySelector(".card__img").alt = `${company}-logo`;
+
+          // PostAt
+          Card.querySelector(".card__postAt").textContent = `${timestampPost(
+            postedAt
+          )} ago. `;
+
+          // Contract
+          const CardContract = document.createElement("span");
+          CardContract.textContent = contract;
+          Card.querySelector(".card__postAt").appendChild(CardContract);
+
+          // Position
+          Card.querySelector(".card__position").textContent = position;
+
+          // Company
+          Card.querySelector(".card__company").textContent = company;
+
+          // Location
+          Card.querySelector(".card__location").textContent = location;
+
+          // Add Card in Cards List
+          Cards.appendChild(Card);
         }
-      )
-      .join("");
+      );
   } else {
-    cardList = `  <li class="emptySearch">
-                    <img class="emptySearch-img" src="../../assets/icon-search.svg" alt="empty serch logo" />
-                    <h3 class="emptySearch-message">no ads available</h3> 
-                  </li>
-                `;
+    const cloneTemplate = document.importNode(
+      cardIsEmptyTemplate.content,
+      true
+    );
+
+    const EmptySearch = cloneTemplate.querySelector(".emptySearch");
+
+    Cards.appendChild(EmptySearch);
+    console.log(EmptySearch);
   }
 
-  cards.innerHTML = cardList;
+  // Remove Loader
   hiddeLoading();
 };
 

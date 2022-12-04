@@ -1,10 +1,29 @@
 import { hiddeLoading } from "../animations/ToggleLoading.js";
 import { getElement, timestampPost } from "../utils.js";
 
-// On pointe vers les éléments html nécéssaires:
-const companyDetail = getElement(".company");
-const mainDetail = getElement(".main-detail");
-const footerDetail = getElement(".footer-detail");
+// ********************* On pointe vers les éléments html nécéssaires: *********************
+
+// *********************
+// COMPANY SITE
+const companyLogo = getElement(".company-logo");
+const companyImg = getElement(".company-img");
+const companyName = getElement(".company-site__title");
+const companyWebsite = getElement(".company-url");
+const companyUrlBtn = getElement(".company-btn");
+
+// MAIN COMPONENT
+const PostAt = getElement(".mainHeader-postAt");
+const Position = getElement(".mainHeader-position");
+const Location = getElement(".mainHeader-location");
+const MainBtn = getElement(".mainHeader-btn");
+const Description = getElement(".description");
+const RequirementsDef = getElement(".requirements .informations-txt");
+const RequirementsList = getElement(".requirements .informations-list");
+const RolesDef = getElement(".role .informations-txt");
+const RolesList = getElement(".role .informations-list");
+
+// POSITION SITE
+const companyPosition = getElement(".footer-title");
 
 const displayDetail = ({
   apply,
@@ -24,102 +43,62 @@ const displayDetail = ({
   const { content: contentRequirement, items: itemsRequirement } = requirements;
   const { content: contentRole, items: itemsRole } = role;
 
-  // UNORDERED LIST UL ITEMS OF REQUIREMENT
-  const unOrderList = itemsRequirement
-    .map((item) => {
-      return `
-              <li>
-                <span></span>
-                <p>${item}</p>
-              </li>
-              `;
-    })
-    .join("");
+  // Company Header
+  companyLogo.style = `background-color: ${logoBackground}`;
+  companyImg.src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+  companyImg.alt = `${company}-logo`;
+  companyName.textContent = company;
+  companyWebsite.textContent = `${company}.com`;
+  companyUrlBtn.href = website;
 
-  // ORDER LIST OL ITEMS OF REQUIREMENT
-  const orderList = itemsRole
-    .map((item, index) => {
-      return `
-              <li>
-                <span>${++index}</span>
-                <p>${item}</p>
-              </li>
-              `;
-    })
-    .join("");
+  // PostAt
+  PostAt.textContent = `${timestampPost(postedAt)} ago .`;
+  const Contract = document.createElement("span");
+  Contract.textContent = contract;
+  PostAt.appendChild(Contract);
 
-  // COMPANY SITE
-  companyDetail.innerHTML = `
-                              <figure class="company-logo" style="background-color: ${logoBackground}">
-                                <img src="https://ecf-dwwm.cefim-formation.org${logo}" alt="${company}-logo" class="company-img" />
-                              </figure>
-                              <div class="company-infos">
-                                <div class="company-site">
-                                  <h3 class="company-site__title">${company}</h3>
-                                  <p class="company-url">${company}.com</p>
-                                </div>
-                                <a href="${website}" class="company-btn" target="_blank">company site</a>
-                              </div>
-                            `;
+  // Position
+  Position.textContent = position;
+  // location
+  Location.textContent = location;
+  // Company Site
+  MainBtn.href = apply;
+  // Description
+  Description.textContent = description;
+  // Requirement Definition
+  RequirementsDef.textContent = contentRequirement;
+  // Roles Definition
+  RolesDef.textContent = contentRole;
 
-  // MAIN COMPONENT
-  mainDetail.innerHTML = `
-                            <div class="detail detailContainer">
-                              <header class="mainHeader">
-                                  <div class="mainHeader-infos">
-                                      <p class="mainHeader-postAt">${timestampPost(
-                                        postedAt
-                                      )} ago . <span>${contract} </span></p>
-                                      <h3 class="mainHeader-position">${position}</h3>
-                                      <h4 class="mainHeader-location">${location} </h4>
-                                  </div>
-                                  <a href="${apply}" class="mainHeader-btn apply" target="_blank">apply now</a>
-                              </header>
+  // Requirement List
+  itemsRequirement.forEach((item) => {
+    const list = document.createElement("li");
+    const span = document.createElement("span");
+    const p = document.createElement("p");
 
-                              <!-- Description -->
-                              <p class="description">
-                                    ${description}
-                              </p>
+    p.textContent = item;
 
-                              <!-- Requirements -->
-                              <section class="requirements">
-                                <div class="informations">
-                                    <h3 class="informations-title">requirements</h3>
-                                    <p class="informations-txt">
-                                      ${contentRequirement}
-                                    </p>
-                                    <ul class="informations-list">
-                                      ${unOrderList}
-                                    </ul>
-                                </div>
-                              </section>
+    list.append(span, p);
+    RequirementsList.appendChild(list);
+  });
 
-                              <!-- Roles -->
-                              <section className="role">
-                                <div class="informations">
-                                    <h3 class="informations-title">what you will do</h3>
-                                    <p class="informations-txt">
-                                      ${contentRole}
-                                    </p>
-                                    <ol class="informations-list numberList">
-                                      ${orderList}
-                                    </ol>
-                                </div>
-                              </section>
-                            </div>
-                          `;
+  // Roles List
+  itemsRole.forEach((item, index) => {
+    const list = document.createElement("li");
+    const span = document.createElement("span");
+    const p = document.createElement("p");
 
-  footerDetail.innerHTML = `
-                            <div class="container">
-                              <div class="detail detailContainer">
-                                <div class="footer-infos">
-                                  <h3 class="footer-title">${position}</h3>
-                                  <p>so digital inc.</p>
-                                </div>
-                                <a href="../../index.html" class="footer-btn apply" >apply now</a>
-                              </div>
-                            </div>
-                            `;
+    span.textContent = ++index;
+    p.textContent = item;
+
+    list.append(span, p);
+    RolesList.appendChild(list);
+  });
+
+  // Position Company
+  companyPosition.textContent = position;
+
+  // Remove Loader
   hiddeLoading();
 };
 
