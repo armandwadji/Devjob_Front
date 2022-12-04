@@ -78,9 +78,7 @@ const displayDetail = ({
 
     p.textContent = item;
 
-    list.appendChild(span);
-    list.appendChild(p);
-
+    list.append(span, p);
     RequirementsList.appendChild(list);
   });
 
@@ -93,9 +91,7 @@ const displayDetail = ({
     span.textContent = ++index;
     p.textContent = item;
 
-    list.appendChild(span);
-    list.appendChild(p);
-
+    list.append(span, p);
     RolesList.appendChild(list);
   });
 

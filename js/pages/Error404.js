@@ -19,6 +19,7 @@ const bubbleMaker = () => {
   bubble.style.top = Math.random() * 100 + 50 + "%";
   bubble.style.left = Math.random() * 100 + "%";
 
+  // +1 / -1
   const plusMinus = Math.random() > 0.5 ? 1 : -1;
 
   // Direction aleatoire de la bulle
