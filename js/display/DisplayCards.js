@@ -2,7 +2,7 @@ import { hiddeLoading } from "../animations/ToggleLoading.js";
 import { getElement, timestampPost } from "../utils.js";
 
 // On Pointe vers la liste des cards
-const Cards = getElement(".cards");
+const cards = getElement(".cards");
 
 //Récupèration du template d'une card
 const cardTemplate = getElement("#card-template");
@@ -29,44 +29,44 @@ const displayCards = (jobs) => {
           const cloneTemplate = document.importNode(cardTemplate.content, true);
 
           // Select Card
-          const Card = cloneTemplate.querySelector(".card");
+          const card = cloneTemplate.querySelector(".card");
 
           // Link
-          Card.querySelector("a").id = id;
-          Card.querySelector("a").href = `detail.html?id=${id}`;
+          card.querySelector("a").id = id;
+          card.querySelector("a").href = `detail.html?id=${id}`;
 
           // Background Color Logo
-          Card.querySelector(
+          card.querySelector(
             ".card__logo"
           ).style = `background-color: ${logoBackground}`;
 
           // Logo
-          Card.querySelector(
+          card.querySelector(
             ".card__img"
           ).src = `https://ecf-dwwm.cefim-formation.org${logo}`;
-          Card.querySelector(".card__img").alt = `${company}-logo`;
+          card.querySelector(".card__img").alt = `${company}-logo`;
 
           // PostAt
-          Card.querySelector(".card__postAt").textContent = `${timestampPost(
+          card.querySelector(".card__postAt").textContent = `${timestampPost(
             postedAt
           )} ago. `;
 
           // Contract
-          const CardContract = document.createElement("span");
-          CardContract.textContent = contract;
-          Card.querySelector(".card__postAt").appendChild(CardContract);
+          const cardContract = document.createElement("span");
+          cardContract.textContent = contract;
+          card.querySelector(".card__postAt").appendChild(cardContract);
 
           // Position
-          Card.querySelector(".card__position").textContent = position;
+          card.querySelector(".card__position").textContent = position;
 
           // Company
-          Card.querySelector(".card__company").textContent = company;
+          card.querySelector(".card__company").textContent = company;
 
           // Location
-          Card.querySelector(".card__location").textContent = location;
+          card.querySelector(".card__location").textContent = location;
 
           // Add Card in Cards List
-          Cards.appendChild(Card);
+          cards.appendChild(card);
         }
       );
   } else {
@@ -77,7 +77,7 @@ const displayCards = (jobs) => {
 
     const EmptySearch = cloneTemplate.querySelector(".emptySearch");
 
-    Cards.appendChild(EmptySearch);
+    cards.appendChild(EmptySearch);
     console.log(EmptySearch);
   }
 

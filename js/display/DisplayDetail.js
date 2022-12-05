@@ -5,22 +5,22 @@ import { getElement, timestampPost } from "../utils.js";
 
 // *********************
 // COMPANY SITE
-const companyLogo = getElement(".company-logo");
-const companyImg = getElement(".company-img");
-const companyName = getElement(".company-site__title");
-const companyWebsite = getElement(".company-url");
-const companyUrlBtn = getElement(".company-btn");
+const logoCompany = getElement(".company-logo");
+const imgCompany = getElement(".company-img");
+const nameCompany = getElement(".company-site__title");
+const webSiteCompany = getElement(".company-url");
+const urlBtnCompany = getElement(".company-btn");
 
 // MAIN COMPONENT
-const PostAt = getElement(".mainHeader-postAt");
-const Position = getElement(".mainHeader-position");
-const Location = getElement(".mainHeader-location");
-const MainBtn = getElement(".mainHeader-btn");
-const Description = getElement(".description");
-const RequirementsDef = getElement(".requirements .informations-txt");
-const RequirementsList = getElement(".requirements .informations-list");
-const RolesDef = getElement(".role .informations-txt");
-const RolesList = getElement(".role .informations-list");
+const postAtCompany = getElement(".mainHeader-postAt");
+const positionCompany = getElement(".mainHeader-position");
+const locationCompany = getElement(".mainHeader-location");
+const mainBtnCompany = getElement(".mainHeader-btn");
+const descriptionCompany = getElement(".description");
+const requirementsDefCompany = getElement(".requirements .informations-txt");
+const requirementsListCompany = getElement(".requirements .informations-list");
+const rolesDefCompany = getElement(".role .informations-txt");
+const rolesListCompany = getElement(".role .informations-list");
 
 // POSITION SITE
 const companyPosition = getElement(".footer-title");
@@ -44,31 +44,31 @@ const displayDetail = ({
   const { content: contentRole, items: itemsRole } = role;
 
   // Company Header
-  companyLogo.style = `background-color: ${logoBackground}`;
-  companyImg.src = `https://ecf-dwwm.cefim-formation.org${logo}`;
-  companyImg.alt = `${company}-logo`;
-  companyName.textContent = company;
-  companyWebsite.textContent = `${company}.com`;
-  companyUrlBtn.href = website;
+  logoCompany.style = `background-color: ${logoBackground}`;
+  imgCompany.src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+  imgCompany.alt = `${company}-logo`;
+  nameCompany.textContent = company;
+  webSiteCompany.textContent = `${company}.com`;
+  urlBtnCompany.href = website;
 
-  // PostAt
-  PostAt.textContent = `${timestampPost(postedAt)} ago .`;
+  // postAtCompany
+  postAtCompany.textContent = `${timestampPost(postedAt)} ago .`;
   const Contract = document.createElement("span");
   Contract.textContent = contract;
-  PostAt.appendChild(Contract);
+  postAtCompany.appendChild(Contract);
 
   // Position
-  Position.textContent = position;
+  positionCompany.textContent = position;
   // location
-  Location.textContent = location;
+  locationCompany.textContent = location;
   // Company Site
-  MainBtn.href = apply;
+  mainBtnCompany.href = apply;
   // Description
-  Description.textContent = description;
+  descriptionCompany.textContent = description;
   // Requirement Definition
-  RequirementsDef.textContent = contentRequirement;
+  requirementsDefCompany.textContent = contentRequirement;
   // Roles Definition
-  RolesDef.textContent = contentRole;
+  rolesDefCompany.textContent = contentRole;
 
   // Requirement List
   itemsRequirement.forEach((item) => {
@@ -79,7 +79,7 @@ const displayDetail = ({
     p.textContent = item;
 
     list.append(span, p);
-    RequirementsList.appendChild(list);
+    requirementsListCompany.appendChild(list);
   });
 
   // Roles List
@@ -92,7 +92,7 @@ const displayDetail = ({
     p.textContent = item;
 
     list.append(span, p);
-    RolesList.appendChild(list);
+    rolesListCompany.appendChild(list);
   });
 
   // Position Company
