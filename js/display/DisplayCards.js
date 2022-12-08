@@ -26,7 +26,7 @@ const displayCards = (jobs) => {
           postedAt,
         }) => {
           // Clone Template
-          const cloneTemplate = document.importNode(cardTemplate.content, true);
+          const cloneTemplate = cardTemplate.content.cloneNode(true);
 
           // Select Card
           const card = cloneTemplate.querySelector(".card");
@@ -70,15 +70,10 @@ const displayCards = (jobs) => {
         }
       );
   } else {
-    const cloneTemplate = document.importNode(
-      cardIsEmptyTemplate.content,
-      true
-    );
-
+    const cloneTemplate = cardIsEmptyTemplate.content.cloneNode(true);
     const EmptySearch = cloneTemplate.querySelector(".emptySearch");
 
     cards.appendChild(EmptySearch);
-    console.log(EmptySearch);
   }
 
   // Remove Loader

@@ -5,7 +5,9 @@ const fetchData = async (url) => {
     return data;
   } catch (error) {
     window.location = "../../error404.html";
-    console.error("your request is fail, check the url.");
+
+    let message = "your request is fail, check the url.";
+    console.error({ message, error });
   }
 };
 
