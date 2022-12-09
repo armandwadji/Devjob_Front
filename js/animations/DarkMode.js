@@ -12,9 +12,6 @@ const isDarkMode =
 if ((!darkStorage && isDarkMode) || darkStorage) {
   body.classList.add("darken");
   toggleMode.classList.add("dark");
-} else {
-  body.classList.remove("darken");
-  toggleMode.classList.remove("dark");
 }
 
 toggleMode.addEventListener("click", () => {
