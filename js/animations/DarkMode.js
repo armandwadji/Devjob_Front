@@ -9,10 +9,7 @@ const darkStorage = getStorageItem("darkmode"); //DarkMode enregistrer de la ses
 const isDarkMode =
   window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches; //DarkMode des preferences systèmes
 
-if (darkStorage === null && isDarkMode) {
-  body.classList.add("darken");
-  toggleMode.classList.add("dark");
-} else if (darkStorage) {
+if ((!darkStorage && isDarkMode) || darkStorage) {
   body.classList.add("darken");
   toggleMode.classList.add("dark");
 } else {
