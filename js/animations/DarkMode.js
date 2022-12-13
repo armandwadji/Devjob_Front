@@ -17,6 +17,5 @@ if ((!darkStorage && isDarkMode) || darkStorage) {
 toggleMode.addEventListener("click", () => {
   toggleMode.classList.toggle("dark");
   body.classList.toggle("darken");
-  z;
   setStorageItem("darkmode", body.classList.contains("darken"));
 });
