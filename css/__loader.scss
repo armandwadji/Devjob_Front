@@ -1,8 +1,8 @@
 // ************ LOADER CIRCLE **************
 .loader {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: $white;
   z-index: 10000;
   display: flex;
