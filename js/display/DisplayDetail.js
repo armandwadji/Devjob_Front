@@ -25,20 +25,8 @@ const rolesListCompany = getElement(".role .informations-list");
 // POSITION SITE
 const companyPosition = getElement(".footer-title");
 
-const displayDetail = ({
-  apply,
-  company,
-  contract,
-  description,
-  location,
-  logo,
-  logoBackground,
-  position,
-  postedAt,
-  requirements,
-  role,
-  website,
-}) => {
+const displayDetail = ( { apply, company, contract, description, location, logo, logoBackground, position, postedAt, requirements, role, website } ) => {
+  
   // On destructure le content et les items de requirements et roles en les renommants pour les différenciés
   const { content: contentRequirement, items: itemsRequirement } = requirements;
   const { content: contentRole, items: itemsRole } = role;

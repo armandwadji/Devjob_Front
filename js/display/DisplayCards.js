@@ -14,17 +14,8 @@ const displayCards = (jobs) => {
   if (jobs.length > 0) {
     jobs
       .sort((a, b) => b.postedAt - a.postedAt)
-      .forEach(
-        ({
-          company,
-          contract,
-          id,
-          location,
-          logo,
-          logoBackground,
-          position,
-          postedAt,
-        }) => {
+      .forEach( ( { company, contract, id, location, logo, logoBackground, position, postedAt } ) => {
+        
           // Clone Template
           const cloneTemplate = cardTemplate.content.cloneNode(true);
 

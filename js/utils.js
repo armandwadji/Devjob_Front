@@ -17,19 +17,13 @@ const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job";
 const getElement = (selection) => {
   const element = document.querySelector(selection);
   if (element) return element;
-  throw new Error(
-    `Please check "${selection}" selector, no such element exist`
-  );
+  throw new Error( `Please check "${selection}" selector, no such element exist` );
 };
 // ---------------------------------------------------------------
 
 // *************** LOCAL-STORAGE ACCESSEURS **********************
-const setStorageItem = async (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
-const getStorageItem = (value) => {
-  return JSON.parse(localStorage.getItem(value));
-};
+const setStorageItem = async ( key, value ) => { localStorage.setItem( key, JSON.stringify( value ) ) };
+const getStorageItem = ( value ) => { return JSON.parse( localStorage.getItem( value ) ) };
 // -------------------------------------------------------
 
 // *********************** TIMESTAMP POST ************************
@@ -140,7 +134,7 @@ const loadMoreEnabled = () => {
 const showJobsSearch = async (fullTime = 0, company = "", location = "") => {
   showLoading(); // loader visible
 
-  let urlSearch = null;
+  let urlSearch = "";
   let jobs = [];
 
   if (fullTime || company || location) {
@@ -160,15 +154,4 @@ const showJobsSearch = async (fullTime = 0, company = "", location = "") => {
   return jobs;
 };
 
-export {
-  URLCARDS,
-  URLCARD,
-  getElement,
-  setStorageItem,
-  getStorageItem,
-  timestampPost,
-  idrecuparation,
-  loadMoreDisabled,
-  loadMoreEnabled,
-  showJobsSearch,
-};
+export { URLCARDS, URLCARD, getElement, setStorageItem, getStorageItem, timestampPost, idrecuparation, loadMoreDisabled, loadMoreEnabled, showJobsSearch };

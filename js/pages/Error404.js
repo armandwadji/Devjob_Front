@@ -27,17 +27,13 @@ const bubbleMaker = () => {
 
   bubble.addEventListener("click", () => {
     counter += 1;
-    counterDisplay.textContent = `${counter} ${
-      counter === 1 ? "bulle" : "bulles"
-    }`;
+    counterDisplay.textContent = `${counter} ${counter === 1 ? "bulle" : "bulles"}`;
     counterDisplay.style = "font-size: 6rem";
 
     bubble.remove();
   });
 
-  setTimeout(() => {
-    bubble.remove();
-  }, 8000);
+  setTimeout(() => bubble.remove(), 8000);
 };
 
 setInterval(bubbleMaker, 1000);
