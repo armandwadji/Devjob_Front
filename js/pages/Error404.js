@@ -26,7 +26,7 @@ const bubbleMaker = () => {
   bubble.style.setProperty("--left", `${Math.random() * 100 * plusMinus}%`);
 
   bubble.addEventListener("click", () => {
-    counter += 1;
+    counter++;
     counterDisplay.textContent = `${counter} ${counter === 1 ? "bulle" : "bulles"}`;
     counterDisplay.style = "font-size: 6rem";
 
