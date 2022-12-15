@@ -17,54 +17,48 @@ const displayCards = (jobs) => {
       .forEach( ( { company, contract, id, location, logo, logoBackground, position, postedAt } ) => {
         
           // Clone Template
-          const cloneTemplate = cardTemplate.content.cloneNode(true);
+          const cloneTemplate = cardTemplate.content.cloneNode( true );
 
           // Select Card
-          const card = cloneTemplate.querySelector(".card");
+          const card = cloneTemplate.querySelector( ".card" );
 
           // Link
-          card.querySelector("a").id = id;
-          card.querySelector("a").href = `detail.html?id=${id}`;
+          card.querySelector( "a" ).id = id;
+          card.querySelector( "a" ).href = `detail.html?id=${id}`;
 
           // Background Color Logo
-          card.querySelector(
-            ".card__logo"
-          ).style = `background-color: ${logoBackground}`;
+          card.querySelector( ".card__logo" ).style = `background-color: ${logoBackground}`;
 
           // Logo
-          card.querySelector(
-            ".card__img"
-          ).src = `https://ecf-dwwm.cefim-formation.org${logo}`;
-          card.querySelector(".card__img").alt = `${company}-logo`;
+          card.querySelector( ".card__img" ).src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+          card.querySelector( ".card__img" ).alt = `${company}-logo`;
 
           // PostAt
-          card.querySelector(".card__postAt").textContent = `${timestampPost(
-            postedAt
-          )} ago. `;
+          card.querySelector( ".card__postAt" ).textContent = `${timestampPost( postedAt )} ago. `;
 
           // Contract
-          const cardContract = document.createElement("span");
+          const cardContract = document.createElement( "span" );
           cardContract.textContent = contract;
-          card.querySelector(".card__postAt").appendChild(cardContract);
+          card.querySelector( ".card__postAt" ).appendChild( cardContract );
 
           // Position
-          card.querySelector(".card__position").textContent = position;
+          card.querySelector( ".card__position" ).textContent = position;
 
           // Company
-          card.querySelector(".card__company").textContent = company;
+          card.querySelector( ".card__company" ).textContent = company;
 
           // Location
-          card.querySelector(".card__location").textContent = location;
+          card.querySelector( ".card__location" ).textContent = location;
 
           // Add Card in Cards List
-          cards.appendChild(card);
+          cards.appendChild( card );
         }
       );
   } else {
-    const cloneTemplate = cardIsEmptyTemplate.content.cloneNode(true);
-    const EmptySearch = cloneTemplate.querySelector(".emptySearch");
+    const cloneTemplate = cardIsEmptyTemplate.content.cloneNode( true );
+    const EmptySearch = cloneTemplate.querySelector( ".emptySearch" );
 
-    cards.appendChild(EmptySearch);
+    cards.appendChild( EmptySearch );
   }
 
   // Remove Loader
