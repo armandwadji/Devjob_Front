@@ -6,9 +6,11 @@ let oldValue = 0;
 
 if (window.innerWidth >= 1440) {
   document.addEventListener( "scroll", () => {
-    
     let newValue = window.pageYOffset;
-    oldValue - newValue < 0 ? scrollToTopBtn.classList.add( "show" ) : scrollToTopBtn.classList.remove( "show" );
+
+    if ( oldValue - newValue < 0 ) scrollToTopBtn.classList.add( "show" ); 
+    else scrollToTopBtn.classList.remove( "show" );
+    
     oldValue = newValue;
   });
 }
