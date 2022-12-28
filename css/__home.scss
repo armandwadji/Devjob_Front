@@ -263,12 +263,13 @@
           margin-inline-start: 0;
           margin-inline-end: 1.6rem;
           appearance: none; // Apparance checkbox
-
+          
+          
           &:hover::before {
             background-color: $violet;
             opacity: 0.25;
           }
-
+          
           &:before {
             content: "";
             display: block;
@@ -281,6 +282,8 @@
             border-radius: 0.3rem;
             background-color: $very-dark-blue;
             opacity: 0.1;
+            transition: 0.2s ease-in-out;
+            
           }
 
           &:checked:before {
