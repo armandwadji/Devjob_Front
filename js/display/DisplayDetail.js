@@ -4,7 +4,7 @@ import { getElement, timestampPost } from "../utils.js";
 // ********************* On pointe vers les éléments html nécéssaires: *********************
 
 // *********************
-// COMPANY SITE
+// HEADER COMPANY 
 const logoCompany = getElement(".company-logo");
 const imgCompany = getElement(".company-img");
 const nameCompany = getElement(".company-site__title");
@@ -22,8 +22,9 @@ const requirementsListCompany = getElement(".requirements .informations-list");
 const rolesDefCompany = getElement(".role .informations-txt");
 const rolesListCompany = getElement(".role .informations-list");
 
-// POSITION SITE
-const companyPosition = getElement(".footer-title");
+// FOOTER COMPANY
+const companyPosition = getElement( ".footer-title" );
+const companyName = getElement( '.footer-infos p' );
 
 const displayDetail = ( { apply, company, contract, description, location, logo, logoBackground, position, postedAt, requirements, role, website } ) => {
   
@@ -85,6 +86,9 @@ const displayDetail = ( { apply, company, contract, description, location, logo,
 
   // Position Company
   companyPosition.textContent = position;
+
+  // name Company footer
+  companyName.textContent = `${company}.` ;
 
   // Remove Loader
   hiddeLoading();
