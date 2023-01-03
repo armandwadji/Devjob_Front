@@ -88,8 +88,8 @@ const displayDetail = ( { apply, company, contract, description, location, logo,
   companyPosition.textContent = position;
 
   // name Company footer
-  companyName.textContent = `${company}.` ;
-
+  companyName.textContent = `${company}${company.at( -1 ) === '.' ? "" : '.'}`;
+  
   // Remove Loader
   hiddeLoading();
 };
