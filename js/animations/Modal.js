@@ -11,7 +11,8 @@ filterIcon.addEventListener("click", () => {
     formModal.style.visibility = "visible";
     modal.style.visibility = "visible";
     form.style.visibility = "visible";
-    form.classList.toggle("modal");
+    form.classList.toggle( "modal" );
+    
   }
 });
 
@@ -20,6 +21,9 @@ document.addEventListener("click", (e) => {
 
   if (element.classList.contains("modal")) {
     modal.style.visibility = "hidden";
-    form.classList.toggle("modal");
+    form.classList.toggle( "modal" );
   }
+
+  form.querySelector( '.title-input' ).placeholder = !form.classList.contains( "modal" ) ? "Filter by title, companies, expertise" : "Enter jobs Description";
+
 });
