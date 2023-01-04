@@ -37,7 +37,7 @@ const displayDetail = ( { apply, company, contract, description, location, logo,
   imgCompany.src = `https://ecf-dwwm.cefim-formation.org${logo}`;
   imgCompany.alt = `${company}-logo`;
   nameCompany.textContent = company;
-  webSiteCompany.textContent = `${company}.com`;
+  webSiteCompany.textContent = `${company.split(' ').join("")}${company.at( -1 ) === '.' ? "" : '.'}com`;
   urlBtnCompany.href = website;
 
   // postAtCompany
@@ -88,7 +88,7 @@ const displayDetail = ( { apply, company, contract, description, location, logo,
   companyPosition.textContent = position;
 
   // name Company footer
-  companyName.textContent = `${company}${company.at( -1 ) === '.' ? "" : '.'}`;
+  companyName.textContent = `${company}`;
   
   // Remove Loader
   hiddeLoading();
