@@ -15,7 +15,7 @@ loadMoreBtn.addEventListener( "click", async () => {
 
   let offset = jobs.length; // Index nécéssaire pour la pagination
 
-  const newCards = await fetchData(`${urlPaginaton}?limit=12&offset=${offset}`);
+  const newCards = await fetchData(`${urlPaginaton}?limit=3&offset=${offset}`);
 
   const { jobs: newJobs, total } = newCards;
 
