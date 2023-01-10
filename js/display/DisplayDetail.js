@@ -25,6 +25,7 @@ const rolesListCompany = getElement(".role .informations-list");
 // FOOTER COMPANY
 const companyPosition = getElement( ".footer-title" );
 const companyName = getElement( '.footer-infos p' );
+const footerBtnApply = getElement( '.footer-btn.apply' );
 
 const displayDetail = ( { apply, company, contract, description, location, logo, logoBackground, position, postedAt, requirements, role, website } ) => {
   
@@ -89,6 +90,11 @@ const displayDetail = ( { apply, company, contract, description, location, logo,
 
   // name Company footer
   companyName.textContent = `${company}`;
+
+  // footer Apply Btn
+  footerBtnApply.href = apply;
+
+
   
   // Remove Loader
   hiddeLoading();
