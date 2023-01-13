@@ -34,7 +34,7 @@ const displayCards = (jobs) => {
           card.querySelector( ".card__img" ).alt = `${company}-logo`;
 
           // PostAt
-          card.querySelector( ".card__postAt" ).textContent = `${timestampPost( postedAt )} ago. `;
+          card.querySelector( ".card__postAt" ).textContent = `${timestampPost( postedAt )} ago • `;
 
           // Contract
           const cardContract = document.createElement( "span" );
