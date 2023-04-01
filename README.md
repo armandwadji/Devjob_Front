@@ -1,6 +1,6 @@
 <div>
   <h1 align="center">
-    <a href="https://github.com/armandwadji/DevJobs.git">DevJobs  👩🏻‍💻🧑🏽‍💻👨🏿‍💻
+    <a href="https://github.com/armandwadji/DevJobs.git">DevJob_Front  👩🏻‍💻🧑🏽‍💻👨🏿‍💻
     </a>  
   </h1>
 </div> 
