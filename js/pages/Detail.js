@@ -1,5 +1,5 @@
 import "../animations/DarkMode.js";
-import displayDetail from "../display/Displaydetail.js";
+import displayDetail from "../display/DisplayDetail.js";
 import fetchCards from "../requests/FetchData.js";
 import { idrecuparation, URLCARD } from "../utils.js";
 
