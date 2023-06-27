@@ -2,8 +2,8 @@ import { showLoading } from "./animations/ToggleLoading.js";
 import fetchData from "./requests/FetchData.js";
 
 // CONSTANTES DES URLS POUR LES CARDS ET LE DETAIL DE CHAQUE CARDS
-const URLCARDS = "https://ecf-dwwm.cefim-formation.org/api/jobs";
-const URLCARD = "https://ecf-dwwm.cefim-formation.org/api/job";
+const URLCARDS = "https://devjobs.wadji.cefim.o2switch.site/api/jobs";
+const URLCARD = "https://devjobs.wadji.cefim.o2switch.site/api/job";
 
 /* POUR LA RECHERCHE NOUS FERONS DE LA MANIERE SUIVANTE :
       ${URLCARDS}/search?text=${company}&location=${location}&fulltime=${fulltime}&limit=12

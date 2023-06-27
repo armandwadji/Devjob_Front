@@ -35,7 +35,7 @@ const displayDetail = ( { apply, company, contract, description, location, logo,
 
   // Company Header
   logoCompany.style = `background-color: ${logoBackground}`;
-  imgCompany.src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+  imgCompany.src = `${logo}`;
   imgCompany.alt = `${company}-logo`;
   nameCompany.textContent = company;
   webSiteCompany.textContent = `${company.split(' ').join("")}${company.at( -1 ) === '.' ? "" : '.'}com`;

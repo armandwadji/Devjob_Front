@@ -30,7 +30,7 @@ const displayCards = (jobs) => {
           card.querySelector( ".card__logo" ).style = `background-color: ${logoBackground}`;
 
           // Logo
-          card.querySelector( ".card__img" ).src = `https://ecf-dwwm.cefim-formation.org${logo}`;
+          card.querySelector( ".card__img" ).src = `${logo}`;
           card.querySelector( ".card__img" ).alt = `${company}-logo`;
 
           // PostAt
