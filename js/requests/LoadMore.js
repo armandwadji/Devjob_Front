@@ -18,8 +18,8 @@ loadMoreBtn.addEventListener( "click", async () => {
   const newCards = await fetchData(`${urlPaginaton}?limit=3&offset=${offset}`);
 
   const { jobs: newJobs, total } = newCards;
-
-  if (jobs.length < total) {
+  console.log(newJobs);
+  if ( newJobs.length > 0) {
     jobs = [...jobs, ...newJobs];
     setStorageItem("jobs", jobs);
     displayCards( newJobs ); //On actualise l'affichage des cards

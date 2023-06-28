@@ -1,5 +1,5 @@
 import { hiddeLoading } from "../animations/ToggleLoading.js";
-import { getElement, timestampPost } from "../utils.js";
+import { getElement, getStorageItem, timestampPost } from "../utils.js";
 
 // On Pointe vers la liste des cards
 const cards = getElement(".cards");
@@ -11,7 +11,7 @@ const cardTemplate = getElement("#card-template");
 const cardIsEmptyTemplate = getElement("#emptySearch-template");
 
 const displayCards = (jobs) => {
-  if (jobs.length > 0) {
+  if (jobs.length > 0 || getStorageItem("jobs").length > 0) {
     jobs
       .sort((a, b) => b.postedAt - a.postedAt)
       .forEach( ( { company, contract, id, location, logo, logoBackground, position, postedAt } ) => {
