@@ -19,7 +19,7 @@ loadMoreBtn.addEventListener( "click", async () => {
 
   const { jobs: newJobs, total } = newCards;
   console.log(newJobs);
-  if ( newJobs.length > 0) {
+  if ( newJobs.length > 0 ) {
     jobs = [...jobs, ...newJobs];
     setStorageItem("jobs", jobs);
     displayCards( newJobs ); //On actualise l'affichage des cards
