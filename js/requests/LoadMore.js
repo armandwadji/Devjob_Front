@@ -14,8 +14,8 @@ loadMoreBtn.addEventListener( "click", async () => {
   let jobs = getStorageItem("jobs"); // Liste des jobs stockés dans le localStorage
 
   let offset = jobs.length; // Index nécéssaire pour la pagination
-
-  const newCards = await fetchData(`${urlPaginaton}?limit=12&offset=${offset}`);
+  console.log();
+  const newCards = await fetchData(`${urlPaginaton}${urlPaginaton.includes('fulltime') ? '&' : '?'}limit=12&offset=${offset}`);
 
   const { jobs: newJobs, total } = newCards;
   console.log(newJobs);
